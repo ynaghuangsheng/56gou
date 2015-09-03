@@ -1,0 +1,104 @@
+{include file="head.htpl"}
+
+<div class="subnav">
+    <h1 class="title_2 line_x">采集器修改</h1>
+</div>
+<div class="pad_lr_10" >
+    <form id="info_form" action="?controller=tao&action=update" method="post" >
+    <!--loop $data $val-->
+    <input name="id" type="hidden"  value="{$val['id']}">
+    <table width="100%" cellspacing="0" class="table_form">
+        <tbody>
+             <tr>
+                 <th width="150">采集器名称：</th>
+                 <td><input name="name" type="text" class="input-text" value="{$val['name']}"></td>
+             </tr>
+             <tr>
+                 <th width="150">关键字：</th>
+                 <td><input name="key" type="text" class="input-text" value="{$val['key']}"></td>
+             </tr>
+             <tr>
+                 <th>淘宝类别：</th>
+                 <td><input name="cat" type="text" class="input-text" value="{$val['cat']}"></td>
+            </tr>
+            <tr>
+                 <th>导航类别：</th>
+                 <td>
+                    <select name='cid' class="J_cate_select mr10">
+                             <!--loop $typearr $vals-->
+                             <option value="{$vals['id']}" <!--if ($vals['id']==$val['cid'])--> selected <!--endif-->>{$vals['name']}</option>
+			                 <!--endloop-->
+                    </select>
+                 </td>
+            </tr>
+            <tr>
+                <th>排序：</th>
+                <td>
+                    <select name="sort">
+			                 <option value="normal">默认</option>
+			                 <option value="commission_rate">佣金比率</option>
+			                 <option value="total_num" selected>30天推广量</option>
+			                 <option value="total_free">30天支出佣金</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>佣金比率：</th>
+                <td>
+                    <input type="text" name="start_commissionRate" size="10" class="input-text" value="100" /> - 
+                    <input type="text" name="end_commissionRate" size="10" class="input-text" value="9900"/> 
+                    <span class="gray ml10">可不填，最低和最高一起填才有效，如1000代表10%</span>
+                </td>
+            </tr>
+            <tr>
+                <th>折扣比率：</th>
+                <td>
+                    <input type="text" name="start_coupon_rate" size="10" class="input-text" value="1000" /> - 
+                    <input type="text" name="end_coupon_rate" size="10" class="input-text" value="9000"/> 
+                    <span class="gray ml10">可不填，最低和最高一起填才有效，如1000代表10%</span>
+                </td>
+            </tr>
+			<tr>
+                <th>价格：</th>
+                <td>
+                    <input type="text" name="start_price" size="10" class="input-text" value="0"/> - 
+                    <input type="text" name="end_price" size="10" class="input-text" value="99999"/> 
+                    <span class="gray ml10">可不填，最低价格和最高最高一起设置才有效</span>
+                </td>
+            </tr>
+            <tr>
+                <th>销量：</th>
+                <td>
+                    <input type="text" name="start_volume" size="10" class="input-text" value="0"/> - 
+                    <input type="text" name="end_volume" size="10" class="input-text" value="9999999"/> 
+                    <span class="gray ml10">可不填，最低销量和最高销量一起设置才有效</span>
+                </td>
+            </tr>
+            <tr>
+				<th>是否包邮：</th>
+				<td>
+					<input name="ems" id="ems0" value="0" type="radio" ><label for="ems0">&nbsp;默&nbsp;认&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<input name="ems" id="ems1" value="1" type="radio" checked><label for="ems1">&nbsp;包&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<span class="gray ml10"></span>
+				</td>
+			</tr>
+			<tr>
+                <th>是否商城：</th>
+                <td>
+                    <label class="mr10"><input type="checkbox" name="shop_type" value="B"> 仅天猫商品</label>
+                </td>
+            </tr>
+			
+            
+             <tr>
+                <th></th>
+                <td><input type="submit" name="search" class="smt  mr10" value="确定" /></td>
+            </tr>
+             
+        </tbody>
+   </table>
+   <!--endloop-->
+   </form>
+</div>
+
+{include file="foot.htpl"}
