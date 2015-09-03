@@ -105,4 +105,36 @@ class Storage{
         );
         return $info[$name];
     }
+   //文件检测 不存在生成
+   static public function make_dir($dir){
+		  $folder=$dir;
+	      if (!file_exists($folder)){
+	      	@umask(0);
+            preg_match_all('/([^\/]*)\/?/i', $folder, $atmp);
+            $base = ($atmp[0][0] == '/') ? '/' : '';
+            foreach ($atmp[1] AS $val){
+                if ('' != $val){
+                     $base .= $val; 
+                     if ('..' == $val || '.' == $val){
+                        $base .= '/';
+                        continue;
+                     }
+                }else{
+                  continue;
+                }
+                $base .= '/';
+                if (!file_exists($base)){
+                   if (@mkdir(rtrim($base, '/'), 0777)){
+                     @chmod($base, 0777);
+                     $reval = true;
+                   }
+                }
+            }//foreach 
+	     }else{
+             $reval = is_dir($folder);
+         }
+         clearstatcache();
+         return $reval;
+	     
+	 }
 }
