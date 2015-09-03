@@ -1,6 +1,7 @@
-<?php
+﻿<?php
 // 应用入口文件
 // 这是我加的一行代码
+//wqwqwqqwqw
 if (version_compare(PHP_VERSION, '5.3.0','<'))
 die('require PHP > 5.3.0 !'); //检测PHP环境
 define('APP_DEBUG', TRUE);//false TRUE开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
