@@ -37,13 +37,16 @@ class Templates {
       //is_dir_exists()方法：相关目录是否存在的检测
       private function is_dir_exists(){
       	if(!is_dir(V_PATH)){//检测是否存在模板文件夹
-            	exit('模板文件夹不存在!');
+            	//exit('模板文件夹不存在!');
+            	Storage::make_dir(V_PATH);
             }
             if(!is_dir(TPL_PATH)){//检测是否存在编译文件夹
-            	exit('编译文件夹不存在!');
+            	Storage::make_dir(TPL_PATH);
+            	//exit('编译文件夹不存在!');
             }
             if(!is_dir(HTML_PATH)){//检测是否存在缓存文件夹
-            	exit('缓存文件夹不存在!');
+            	Storage::make_dir(HTML_PATH);
+            	//exit('缓存文件夹不存在!');
             }
       }
       //cache()方法：完成与缓存相关的一些功能
