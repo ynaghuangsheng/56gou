@@ -1,0 +1,68 @@
+{include file="head.htpl"}
+
+<div class="subnav">
+    <h1 class="title_2 line_x">新建类别</h1>
+</div>
+<div class="pad_lr_10" >
+    <form id="info_form" action="?controller=type&action=add" method="post" >
+    <table width="100%" cellspacing="0" class="table_form">
+        <tbody>
+             <tr>
+                 <th>所属类别：</th>
+                 <td>
+                    <select name='pid' class="J_cate_select mr10">
+                             <option value="0">--</option>
+                             <!--loop $typearr $val-->
+                             <option value="{$val['id']}">{$val['name']}</option>
+			                 <!--endloop-->
+                    </select>
+                 </td>
+            </tr>
+             <tr>
+                 <th width="150">类别名称：</th>
+                 <td>
+                     <input name="name" type="text" size="10" class="input-text" value="">
+                     <span class="gray ml10">请填上类别名称</span>
+                 </td>
+             </tr>
+             <tr>
+                 <th width="150">索引：</th>
+                 <td>
+                     <input name="tag" type="text" class="input-text" value="">
+                     <span class="gray ml10">请填上索引</span>
+                 </td>
+             </tr>
+             <tr>
+                 <th width="150">SEO_title：</th>
+                 <td>
+                     <input name="seo_title" type="text" class="input-text" style="width:400px;" value="">
+                     <span class="gray ml10"></span>
+                 </td>
+             </tr>
+             <tr>
+                 <th width="150">SEO_key：</th>
+                 <td>
+                     <input name="seo_key" type="text" class="input-text" style="width:400px;" value="">
+                     <span class="gray ml10"></span>
+                 </td>
+             </tr>
+             <tr>
+                 <th width="150">SEO_des：</th>
+                 <td>
+                     <TEXTAREA  name="seo_des" rows="10" cols="80"></TEXTAREA>
+                     <span class="gray ml10"></span>
+                 </td>
+             </tr>
+             <tr>
+                <th></th>
+                <td><input type="submit" name="search" class="smt  mr10" value="确定" /></td>
+            </tr>
+             
+        </tbody>
+   </table>
+   </form>
+</div>
+
+
+
+{include file="foot.htpl"}

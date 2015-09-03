@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="off">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./Public/admin/style.css" />
+    <title>{$title}</title>
+</head>
+<body scroll="no">
+<div id="header">
+	<div class="logo"><a href="/admin.php" title="后台管理"></a></div>
+
+
+<style>
+.header .rt {
+width: 275px;
+}
+.rt {
+float: right;
+}
+.text-r {
+text-align: right;
+}
+.header .tab_style {
+padding: 16px 14px 0 0;
+}
+.white, .white a {
+color: #fff;
+}
+.cut_line span {
+color: #9fc7e8;
+padding: 0 4px;
+}
+</style>
+	<div class="rt">
+    		<div class="cut_line admin_info tr">
+			<a href="#" target="_blank"></a><span></span>
+		</div>
+		<div class="style_but"></div>
+	</div>
+
+
+    <div class="fl">
+    	<div class="cut_line admin_info tr">
+		您好！<b>admin</b> [超级管理员]
+        	&nbsp;&nbsp;&nbsp;<a href="/?g=admin&m=index&a=logout">[退出]</a>
+			&nbsp;<a href="/" target="_blank">[网站首页]</a>
+        </div>
+    </div>
+    <ul class="nav white" id="J_tmenu">
+        <li class="top_menu"><a href="javascript:;" data-id="0" hidefocus="true" style="outline:none;">后台管理</a></li>
+    	<li class="top_menu"><a href="javascript:;" data-id="1" hidefocus="true" style="outline:none;">商品采集</a></li>
+    	<li class="top_menu"><a href="javascript:;" data-id="2" hidefocus="true" style="outline:none;">商品类别</a></li>
+    	<li class="top_menu"><a href="javascript:;" data-id="3" hidefocus="true" style="outline:none;">商品管理</a></li>
+
+   </ul>
+</div>
+<div id="content">
+	<div class="left_menu fl">
+    	<div id="J_lmenu" class="J_lmenu" data-uri="?controller=index&action=left"></div>
+        <a href="javascript:;" id="J_lmoc" style="outline-style: none; outline-color: invert; outline-width: medium;" hidefocus="true" class="open" title="展开或关闭"></a>
+    </div>
+    <div class="right_main">
+    	<div class="crumbs">
+        	<div class="options">
+				<a href="javascript:;" title="刷新页面" id="J_refresh" class="refresh" hidefocus="true">刷新页面</a>
+            	<a href="javascript:;" title="全屏" id="J_full_screen" class="admin_full" hidefocus="true">全屏</a>
+                <a href="javascript:;" title="更新缓存" id="J_flush_cache" class="flush_cache" data-uri="/index.php?g=admin&m=cache&a=qclear" hidefocus="true">更新缓存</a>
+            	<a href="javascript:;" title="后台地图" id="J_admin_map" class="admin_map" data-uri="/index.php?g=admin&m=index&a=map" hidefocus="true">后台地图</a>
+			</div>
+    		<div id="J_mtab" class="mtab">
+            	<a href="javascript:;" id="J_prev" class="mtab_pre fl" title="上一页">上一页</a>
+                <a href="javascript:;" id="J_next" class="mtab_next fr" title="下一页">下一页</a>
+                <div class="mtab_p">
+                    <div class="mtab_b">
+                        <ul id="J_mtab_h" class="mtab_h"><li class="current" data-id="0"><span><a>后台首页</a></span></li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    	<div id="J_rframe" class="rframe_b">
+        	<iframe id="rframe_0" src="/index.php?g=admin&m=index&a=panel" frameborder="0" scrolling="auto" style="height:100%;width:100%;"></iframe>
+        </div>
+    </div>
+</div>
+<script src="./Public/js/jquery-1.7.min.js"></script>
+<script src="./Public/admin/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*公共*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0; font-family:'Microsoft Yahei', '微软雅黑', Arial, Sans-Serif;}
+html { overflow-x: hidden; }
+body { height: 100%; overflow-x: hidden; background:#fafafa; url(http://demo.8mob.com/static/8mobcom/images/global/background_bg.png);}
+fieldset, img { border: 0px; }
+table { border-collapse: collapse; border-spacing: 0; }
+a { color: #5e5e5e; text-decoration: none; }
+a:hover { color: #ff6c01; text-decoration: underline; }
+:focus { outline: 0 none; }
+ul, li { list-style: none; }
+em { font-style: normal; }
+.clear { clear: both; }
+.header,.footer,.bodyBox,.pageBox{height:auto;text-align:center;}
+.footer,.bodyBox,.pageBox{margin-top:20px;}
+.bodyBox,.pageBox{}
+/*产品列表*/
+.listBox{width:1085px;text-align:left;margin-left:auto;margin-right:auto;}
+.listBox .list{width:auto;height:auto;border-left: 1px solid #efefef;border-top: 1px solid #efefef;display: inline-block;}
+.listBox li{float:left;width:250px;height:350px;text-align:left;padding:10px;border-right: 1px solid #efefef;border-bottom: 1px solid #efefef;background-color:#fff;}
+.listBox .pic{width:250px;height:250px;background-color:#eee;}
+.listBox h3{font-size:12px;line-height:18px;width:100%;height:36px;font-weight: normal;font-family:"微软雅黑","宋体";text-align:left;color:#333;margin-top:5px;overflow: hidden;position:relative;}
+.listBox h3 a{float:left;}
+.listBox .trade{position:absolute;padding:0px 5px;top:18px;right:0px;z-index:2;display: inline-block;width:auto;height:auto;}
+.listBox .price{position:relative;width:100%;height:auto;margin-top:10px;display: inline-block;}
+.listBox .current,.item_list .box .other{float:left;}
+.listBox .btn{position:absolute;bottom:5px;right:5px;font-size:14px;display: inline-block;}
+.listBox .current{font-size:32px;font-family:Arial;color:#ff3366;}
+.listBox .current em{font-size: 14px; font-family:"微软雅黑","verdana"; vertical-align:1px; margin-left:1px;}
+.listBox .other{padding-left:5px;color: #999;}
+.listBox .other strong{width:auto;height:30px;display: inline-block;}
+.listBox .other .old{ text-decoration: line-through;font-size:12px;}
+.listBox .other .discount{color:#ef8d00;font-size:12px;}
+
+
+/*分页导航S*/
+.pageBox_nav {margin-top:50px;margin-bottom:50px;margin-left:auto;margin-right:auto;display: inline-block;}
+.pageBox a,.pageBox i{background:none repeat scroll 0 0 #fff;border: 0px solid #CCC;margin-left:1px;padding:9px 13px;overflow:hidden;color:#919191;font-size:14px;font-weight:550;font-style:normal;line-height:14px;border-right:none;-moz-box-shadow:1px 1px 3px rgba(226,226,226,0.75);-webkit-box-shadow:1px 1px 3px rgba(226,226,226,0.75);box-shadow:1px 1px 3px rgba(226,226,226,0.75);display:block;float:left;}
+.paging1 a { color: #ffffff; cursor: pointer; background: #FD7690; }
+.pageBox i {color:#bbb;}
+.pageBox i.pg-prev {color:#bbb;font-weight:normal;}
+.pageBox i.pg-next {color:#bbb;font-weight:normal;}
+.pageBox a:hover {text-decoration:none;color:#fff;background:#ff3366}
+.pageBox .active { color: #fff; background: #FF89A0; }
+
+</style>
+</head>
+<body>
+<div class="header">header</div>
+<div class="bodyBox">
+
+    <div class="listBox">
+         <div class="list">
+         <ul>
+             <!--loop $list $v-->
+             <li>
+                <div class="pic"><img src="{$v['pic_url']}_250x250.jpg"></div>
+                <h3><a href="#">{$v['title']}</a><span class="trade">已售：{$v['volume']}</span></h3>
+                <div class="price"> 
+                   <span class="current"><em>￥</em>{$v['dis_price']}</span>
+                   <span class="other">
+                      <span class="old"><em>￥</em>{$v['price']}</span>
+                      <span class="discount">(<em>{$v['rate']}</em>折)</span>
+                   </span>
+                   <a class="btn" href="#">去淘宝</a>
+               </div>
+             
+             </li>
+             <!--endloop-->
+
+         </ul>
+         
+   
+         </div>
+             
+    
+    
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+<div class="pageBox"><div class="pageBox_nav">{$page}</div></div>
+<div class="footer">footer</div>
+
+</body>
+</html>
