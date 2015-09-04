@@ -12,6 +12,16 @@
 <script src="/Public/home/js/jquery.lazyload.js" type="text/javascript"></script>
 <script src="/Public/home/js/web.js" type="text/javascript"></script>
 <link rel=stylesheet type=text/css href="/Public/home/css/common.css">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?21db61aa9712000f7f88c469812f31a4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </head>
 <body>
 
