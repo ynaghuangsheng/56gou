@@ -5,7 +5,10 @@
              <!--loop $list $v-->
              <li id="goods">
                 <div class="pic">
-                     <a href="/item/{$v['id']}/"><img src="/Public/tbpic/{$v['iid']}_250x250.jpg"></a>
+                     <a href="/item/{$v['id']}/">
+                     <img class="lazy" original="{$v['pic_url']}_250x250.jpg">
+                     <noscript><img src="/Public/tbpic/{$v['iid']}_250x250.jpg" alt="{$v['title']}" /></noscript>
+                     </a>
                      <!--if (checknew($v['starttime']))--> 
                      <span class="new-icon">新品</span>
                      <!--endif-->

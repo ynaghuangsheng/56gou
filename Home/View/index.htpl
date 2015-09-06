@@ -83,7 +83,10 @@
                <!--loop $yifuData $v-->
                <li>
                    <div class="img">
-                       <a href="/item/{$v['id']}/"><img src="/Public/tbpic/{$v['iid']}_200x200.jpg"></a>
+                       <a href="/item/{$v['id']}/">
+                       <img class="lazy" original="{$v['pic_url']}_200x200.jpg">
+                       <noscript><img src="/Public/tbpic/{$v['iid']}_200x200.jpg" alt="{$v['title']}" /></noscript>
+                       </a>
                    </div>
                    <div class="txt">
                        {F:$my_arr = explode('.',$v['zk_price']);list($dis_price1,$dis_price2) = $my_arr;}
@@ -113,7 +116,10 @@
                <!--loop $xieziData $v-->
                <li>
                    <div class="img">
-                       <a href="/item/{$v['id']}/"><img src="/Public/tbpic/{$v['iid']}_200x200.jpg"></a>
+                       <a href="/item/{$v['id']}/">
+                       <img class="lazy" original="{$v['pic_url']}_200x200.jpg">
+                       <noscript><img src="/Public/tbpic/{$v['iid']}_200x200.jpg" alt="{$v['title']}" /></noscript>
+                       </a>
                    </div>
                    <div class="txt">
                        {F:$my_arr = explode('.',$v['zk_price']);list($dis_price1,$dis_price2) = $my_arr;}
@@ -143,7 +149,10 @@
                <!--loop $baobaoData $v-->
                <li>
                    <div class="img">
-                       <a href="/item/{$v['id']}/"><img src="/Public/tbpic/{$v['iid']}_200x200.jpg"></a>
+                       <a href="/item/{$v['id']}/">
+                       <img class="lazy" original="{$v['pic_url']}_200x200.jpg">
+                       <noscript><img src="/Public/tbpic/{$v['iid']}_200x200.jpg" alt="{$v['title']}" /></noscript>
+                       </a>
                    </div>
                    <div class="txt">
                        {F:$my_arr = explode('.',$v['zk_price']);list($dis_price1,$dis_price2) = $my_arr;}
@@ -173,7 +182,10 @@
                <!--loop $peishiData $v-->
                <li>
                    <div class="img">
-                       <a href="/item/{$v['id']}/"><img src="/Public/tbpic/{$v['iid']}_200x200.jpg"></a>
+                       <a href="/item/{$v['id']}/">
+                       <img class="lazy" original="{$v['pic_url']}_200x200.jpg">
+                       <noscript><img src="/Public/tbpic/{$v['iid']}_200x200.jpg" alt="{$v['title']}" /></noscript>
+                       </a>
                    </div>
                    <div class="txt">
                        {F:$my_arr = explode('.',$v['zk_price']);list($dis_price1,$dis_price2) = $my_arr;}
