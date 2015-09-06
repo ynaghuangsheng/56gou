@@ -1,7 +1,7 @@
 ﻿
 /*公共*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0; font-family:'Microsoft Yahei', '微软雅黑', Arial, Sans-Serif;}
-html { overflow-x: hidden; }
+html { eeoverflow-x: hidden; }
 body { height: 100%;background:#fafafa url();}
 fieldset, img { border: 0px; }
 table { border-collapse: collapse; border-spacing: 0; }
@@ -11,7 +11,7 @@ a:hover { color: #ff6c01; text-decoration: underline; }
 ul, li { list-style: none; }
 em { font-style: normal; }
 .clear {clear:both;height:0;line-height:0;font-size:0;visibility:hidden;overflow:hidden }
-.headerBox,.footerBox,.bodyBox,.navBox,.pageBox,.itemBox,.bannerBox,.tjBox{height:auto;text-align:center;}
+.headerBox,.footerBox,.bodyBox,.navBox,.pageBox,.itemBox,.bannerBox,.tjBox{width:100%;min-width:1101px;height:auto;text-align:center;}
 .footerBox,.bodyBox,.navBox,.pageBox,.tjBox{margin-top:20px;}
 body {
 font: 12px/1.5 'Hiragino Sans GB','Microsoft Yahei',tahoma,sans-serif;
@@ -187,11 +187,37 @@ font: 12px/1.5 'Hiragino Sans GB','Microsoft Yahei',tahoma,sans-serif;
 }
 .pageBox .active { color: #fff; background: #FF89A0;border: 0px solid #CCC;padding:9px 13px 9px 13px;}
 
+
 /*网站底站*/
 .footerBox{margin-top:60px;}
 .footer{height:auto;text-align:center;overflow: hidden;border-top:1px #efefef solid;background-color: #fff;}
 .f_body{width:1101px;height:auto;padding:35px 0;margin:0px auto;}
 .f_body span{color:#666666;font-size:12px;}
 .v-item-focus{-moz-box-shadow:0 1px 7px rgba(255,105,144, .1);-webkit-box-shadow:0 1px 7px rgba(255,105,144, .1);box-shadow:0 1px 10px rgba(255,105,144,.1)}
-
+*html{background-image:url(about:blank);background-attachment:fixed;}/*解决IE6下滚动抖动的问题*/
+#topBox{z-index:20;width:47px; height:auto;float:right;right:8px;bottom:100px;position:fixed;
+_position:absolute;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+_margin-bottom:100px;
+}/*解决IE6下不兼容 position:fixed 的问题*/
+#topBox .li{width:45px; height:45px;font-size:14px;line-height:45px;text-align:center;border:1px solid #efefef;border-bottom:0px;position:relative;background:url(../images/float_bg.png) no-repeat left 0px ;}
+#topBox .li a{width:45px; height:45px;display:block;position:relative;}
+#topBox .end{border:1px solid #efefef;}
+#topBox #gotop{top:0px; display:none; cursor:pointer}
+#topBox #shoucang{background-position:left -135px;}
+#topBox #weibo{background-position:left -90px;}
+#topBox .weibo_box{display:none;width:200px;height:auto;position:absolute;left:-202px;bottom:-93px;border:1px #efefef solid;background-color: #fff;font-size:14px;line-height:20px;}
+#topBox .weibo_box p{margin-top:10px;color:#999;text-align:center;}
+#topBox .weibo_box .h{margin-left:auto;margin-left:auto;_margin-left:50px;display: inline-block;}
+#topBox .weibo_box .h i{float:left;margin-top:2px;width:20px;height:20px;background:url(../images/weibo_logo.gif) no-repeat left 0px ;display:inline;}
+#topBox .weibo_box .h span{float:left;color:#999;}
+#topBox #kefu{background-position:left bottom;}
+#topBox .hover{border-color:#fb0188;}
+#topBox .hover a{background:url(../images/float_bg.png) no-repeat left 0px ;}
+#topBox .hover .gotop {background-position:-45px top;}
+#topBox .hover .shoucang {background-position:-45px -135px;}
+#topBox .hover .weibo{background-position:-45px -90px;}
+#topBox .hover .weibo_box{display:block;}
+#topBox .hover .kefu {background-position:-45px bottom;}
 
