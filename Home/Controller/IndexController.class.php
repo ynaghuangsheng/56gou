@@ -3,6 +3,10 @@ class IndexController extends Controller {
 	 
 	public function index(){
 
+	    /**
+	     * 这个Action改一下，作用只是显示一个首页而已，显示所有商品的任务交给新建的Descover控制器
+	     */
+	    
 		   $list=$this->model->goodsSelect(!empty($_REQUEST['page'])?$_REQUEST['page']:1,40);
            $data['total_rows']=$this->model->count;
            $data['list_rows']=40;
@@ -33,9 +37,5 @@ class IndexController extends Controller {
 		   
 		   $this->display('index.htpl');
 	}
-	
-	
-	
-	
 	
 }
