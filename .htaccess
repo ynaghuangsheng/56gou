@@ -1,5 +1,8 @@
 RewriteEngine on
 RewriteBase /
+
+RewriteRule ^discover/page/([0-9]+)/?$ /index.php?controller=index&page=$1 [L]
+
 RewriteRule ^(yifu|xiezi|baobao|peishi)/?$ /index.php?controller=$1 [L]
 RewriteRule ^(yifu|xiezi|baobao|peishi)/([0-9]+)/?$ /index.php?controller=$1&page=$2 [L]
 RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/?$ /index.php?controller=$1&tag=$2 [L]
@@ -15,4 +18,4 @@ RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?c
 
 
 RewriteRule ^(item)/([0-9]+)/?$ /index.php?controller=$1&id=$2 [L]
-RewriteRule ^(looe)/([0-9]+)/?$ /index.php?controller=$1&page=$2 [L]
+RewriteRule ^(looe)/([0-9]+)/?$ /index.php?controller=$1&id=$2 [L]

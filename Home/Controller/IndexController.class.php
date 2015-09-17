@@ -7,7 +7,7 @@ class IndexController extends Controller {
            $data['total_rows']=$this->model->count;
            $data['list_rows']=40;
            $data['now_page']= !empty($_REQUEST['page'])?$_REQUEST['page']:1;
-           $data['url']='?page={page}';
+           $data['url']='/discover/page/{page}/#goodsbox';
            $page=new Page($data);unset($data);
            $page=$page->show();
            $this->assign('list',$list);unset($list);
