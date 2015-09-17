@@ -6,41 +6,41 @@
                  <div class="lists">
                  <ul>
                      <li class="h3 jing"><span><a>精选</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("帆布鞋")}/">帆布鞋</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("帆布鞋")}/">帆布鞋</a><em></em></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("单鞋")}/">单鞋</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("运动鞋")}/">运动鞋</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("平底单鞋")}/">平底单鞋</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("运动鞋")}/">运动鞋</a><em></em></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("平底单鞋")}/">平底单鞋</a><em></em></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("粗跟鞋")}/">粗跟鞋</a></span></li>
                  </ul>
                  <ul>
                      <li class="h3 hot"><span><a>热品</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("帆布鞋")}/">帆布鞋</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("帆布鞋")}/">帆布鞋</a><em></em></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("单鞋")}/">单鞋</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("平底单鞋")}/">平底单鞋</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("平底单鞋")}/">平底单鞋</a><em></em></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("运动鞋")}/">运动鞋</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("内增高")}/">内增高</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("内增高")}/">内增高</a><em></em></span></li>
                  </ul>
                  <ul>
                      <li class="h3 xiezi"><span><a href="/xiezi/{EF:urlencode("休闲鞋")}/">休闲</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("帆布鞋")}/">帆布鞋</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("帆布鞋")}/">帆布鞋</a><em></em></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("运动鞋")}/">运动鞋</a></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("豆豆鞋")}/">豆豆鞋</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("高帮鞋")}/">高帮鞋</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("短靴")}/">短靴</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("高帮鞋")}/">高帮鞋</a><em></em></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("短靴")}/">短靴</a><em></em></span></li>
                  </ul>
                  <ul>
                      <li class="h3 xuezi"><span><a href="/xiezi/{EF:urlencode("靴子")}/">靴子</a></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("中筒靴")}/">中筒靴</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("短靴")}/">短靴</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("短靴")}/">短靴</a><em></em></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("长筒靴")}/">长筒靴</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("粗跟短靴")}/">粗跟短靴</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("粗跟短靴")}/">粗跟短靴</a><em></em></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("踝靴")}/">踝靴</a></span></li>
                  </ul>
                  <ul>
                      <li class="h3 yuansu"><span><a>元素</a></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("粗跟")}/">粗跟</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("系带")}/">系带</a></span></li>
-                     <li><span><a href="/xiezi/{EF:urlencode("铆钉")}/">铆钉</a></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("系带")}/">系带</a><em></em></span></li>
+                     <li><span><a href="/xiezi/{EF:urlencode("铆钉")}/">铆钉</a><em></em></span></li>
                      <li><span><a href="/xiezi/{EF:urlencode("牛皮")}/">牛皮</a></span></li>
                  </ul>
                  </div>

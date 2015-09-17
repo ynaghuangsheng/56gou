@@ -1,5 +1,4 @@
 {include file="head.htpl"}
-
 <div class="table">
    <div>
         <span>{$error_title}</span><br/>
@@ -10,6 +9,4 @@
    
     
 </div>
-
-
 {include file="foot.htpl"}

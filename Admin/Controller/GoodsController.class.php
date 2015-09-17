@@ -15,7 +15,7 @@ class GoodsController extends CommconController {
 		$this->assign('list',$list);
 		$this->assign('page',$page->show());
 		unset($list);
-		$this->display('goods.htpl');
+		$this->display('index.htpl');
 	}
 	//ajax 推荐首页 精品
 	public function ajaxbut(){

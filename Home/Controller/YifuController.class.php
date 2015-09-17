@@ -31,7 +31,7 @@ class YifuController extends Controller {
 		   $this->assign('page',$page);
 		   $this->assign('head',$head);
 		   
-		   $this->display('yifu.htpl');
+		   $this->display('index.htpl');
 		
 	}
 }

@@ -1,5 +1,13 @@
 <div class="footerBox">
 <div class="footer">
+     <!--if (isset($link))--> 
+     <div class="f_link">
+            友情链接：
+            <!--loop $link $val-->
+             <a href="{$val['web_url']}">{$val['web_name']}</a>
+            <!--endloop-->
+     </div>
+     <!--endif-->
      <div class="f_body">
           <span>Copyright © 2010-2015 56gou.com All rights reserved.</span>
      </div>

@@ -3,7 +3,42 @@ class LooeController extends Controller {
 	//列表
 	public function index(){
 		
+		  $table=M("goods");
+		  $table_des=$table->where('`id`='.$_REQUEST['id'])->find();
+		  
+		  V("Taobao");
+		  $c = new TopClient;
+          $c->appkey = '23182491';//appkey;
+          $c->secretKey = 'f581f96c1e4fa237ce9d0ba418e5255f';//secret;
+          $c->format='json';
+          $req = new TbkItemInfoGetRequest;
+          $req->setFields("num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url");
+          $req->setNumIids($table_des['iid']);
+          $resp = $c->execute($req);
+          
+          $resp=$resp->results->n_tbk_item;
+          //print_r($resp);
+          $eee='';
+          if ($resp){
+	         foreach ($resp as $key=>$goods){
+	         	$eee=implode('|br|',$goods->small_images->string);
+	         	//print_r();
+	         }
+          }
+          if($eee!=''){
+          	$array['small_images']=$eee;
+          	if($table->data($array)->where("`id`=".$_REQUEST['id'])->update()){
+          		$data['msg']=1;
+          		echo json_encode($data);
+          		exit;
+          	}
+          }
+          $data['msg']=0;
+          echo json_encode($data);
+          exit;
+        
 		
+		      //26967528094
 		
 		    //$table=M("goods");
 		    //$table_des=$table->order('id desc')->limit(40,20)->select();
@@ -51,9 +86,9 @@ class LooeController extends Controller {
          
 		 
 		 
-        echo "<br>";
+        //echo "<br>";
         //echo Vd_PATH.'Pscws4/etc/dict.utf8.xdb';
-		print_r($this->get_tags_by_title('索爱箱包2015新款夏链条小包日韩迷你小方包女士小包斜挎包单肩包'));
+		//print_r($this->get_tags_by_title('索爱箱包2015新款夏链条小包日韩迷你小方包女士小包斜挎包单肩包'));
 	}
     public function get_tags_by_title($title, $num=20){
         V('Pscws4');

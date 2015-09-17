@@ -45,6 +45,9 @@ class System {
 	  }
 	  // 设置系统时区
       date_default_timezone_set(C('DEFAULT_TIMEZONE'));
+      if(!is_dir(SE_PATH)){//检测是否存在模板文件夹
+            	Storage::mkdir(SE_PATH);
+      }
 	  session(C('SESSION_OPTIONS'));
 	  // 运行应用 
       App::run();  

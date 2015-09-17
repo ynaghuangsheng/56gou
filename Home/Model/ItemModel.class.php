@@ -22,8 +22,19 @@ class ItemModel{
 		  return $table_des;
 
 	}
+    public function putSelect($order='id desc'){
+		  $table= M('tag');
+		  $table->order($order);
+		  return $table->select();
+	}
 	public function getTag($title){
-		$tagArray=include DATA_PATH."tag.php";
+		$tagfile=DATA_PATH."tag.php";
+		if(!is_file($tagfile)){
+		      $content=$this->putSelect();
+		      $content="<?php return ".var_export($content,true).";";
+              Storage::put($tagfile,$content);
+		}
+		$tagArray=include $tagfile;
 		$taglist=array();
 		foreach($tagArray as $nkeys){
 			if(stripos($title,$nkeys['name'])!==false ){
@@ -31,6 +42,15 @@ class ItemModel{
 			}
 		}
 		return $taglist;
+	}
+	public function small($pic,$pics){
+		if($pic=='unll'){
+			return'[]';
+		}else{
+		  $pics.='|br|'.$pic;
+          return json_encode(explode('|br|',$pics));
+		}
+		
 	}
     public function getIndex($cid){
     	  $array=array();

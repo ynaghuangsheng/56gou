@@ -14,7 +14,7 @@ class TaoController extends CommconController {
 		   $this->assign('page',$page->show());
 		   unset($list);
 		   $this->nav();
-		   $this->display('tao.htpl');
+		   $this->display('index.htpl');
 	}
     //增加
     public function adedit(){
@@ -22,7 +22,7 @@ class TaoController extends CommconController {
 		   $this->assign('title','新建采集');
 		   $this->assign('typearr',$typearr);
 		   unset($typearr);
-		   $this->display('tao_adedit.htpl');
+		   $this->display('adedit.htpl');
 	}
     //增加操作
     public function add(){ 
@@ -39,7 +39,7 @@ class TaoController extends CommconController {
 		   }
 		   $this->assign('title','信息提示');
            $this->nav();
-		   $this->display('error.htpl');
+		   $this->display('comm/error.htpl');
 	}
 	//删除操作
 	public function del(){
@@ -50,7 +50,7 @@ class TaoController extends CommconController {
 		     $this->assign('title','信息提示');
 		     $this->assign('error_title','删除失败');
 		     $this->nav();
-		     $this->display('error.htpl');
+		     $this->display('comm/error.htpl');
 		   }
 		
 	}
@@ -64,7 +64,7 @@ class TaoController extends CommconController {
 		   unset($typearr);
 		   $this->assign('title','修改采集');
 		   $this->nav();
-		   $this->display('tao_upedit.htpl');
+		   $this->display('upedit.htpl');
 	}
 	//更新
     public function update(){
@@ -82,7 +82,7 @@ class TaoController extends CommconController {
 		   $this->assign('error_title','更新失败');
 		   $nav[0]=Array('url'=>'?controller=tao&action=upedit&id='.$_REQUEST['id'],'text'=>'返回');
 		   $this->assign('nav',$nav);
-		   $this->display('error.htpl');
+		   $this->display('comm/error.htpl');
 	}
 	//采集
 	public function coll(){
@@ -98,24 +98,26 @@ class TaoController extends CommconController {
 	      $this->assign('page',$page->show());
 	      $this->assign('title','采集');
 	      $this->nav();
-		  $this->display('tao_coll.htpl');
+		  $this->display('coll.htpl');
 	}
 	//采集入临时库
 	public function colladd(){
 		if(empty($_REQUEST['id'])){  
-          echo"<script>alert('必须选择一个产品,才可以操作!');history.back(-1);</script>";  
+          $array['msg']=false; 
           exit;  
        }else{  
-		
-	      $id= implode(",",$_REQUEST['id']);
+	      $id=$_REQUEST['id'];
 	      $cid=isset($_REQUEST['cid'])?$_REQUEST['cid']:1;
 	      if($this->model->colladd($id,$cid)){
-	      	  echo"<script>alert('操作完成!');history.back(-1);</script>";
+	      	  //echo"<script>alert('操作完成!');history.back(-1);</script>";
+	      	  $array['msg']=true;
 	      }else{
-	      	  echo"<script>alert('操作失败!');history.back(-1);</script>";
+	      	  //echo"<script>alert('操作失败!');history.back(-1);</script>";
+	      	  $array['msg']=false;
 	      }
 	      
        }
+       echo json_encode($array);
 	}
 	//检测商品，在临时库及正式库中是否存在
 	public function getTem(){

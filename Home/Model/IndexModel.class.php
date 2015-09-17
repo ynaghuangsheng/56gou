@@ -23,5 +23,15 @@ class IndexModel{
 		  return $table_des;
 
 	}
+    public function linkSelect($where='',$order='`sort` desc,id desc '){
+		  $table= M('link');
+		  if($where!=='')$table->where($where);
+		  $table->order($order);
+		  $this->count=$table->count();
+		  $table_des=$table->select();
+		  unset($table);
+		  return $table_des;
+
+	}
 
 }

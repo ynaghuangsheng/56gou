@@ -18,7 +18,7 @@ defined('Vd_PATH') 	    or define('Vd_PATH',        PATH.'Vendor/');//第三方�
 defined('C_PATH')       or define('C_PATH',         APP_PATH.'Controller/');   // 项目控制器目录
 defined('M_PATH')       or define('M_PATH',         APP_PATH.'Model/');   // 项目模型目录
 defined('V_PATH')       or define('V_PATH',         APP_PATH.'View/');   // 项目视图目录
-defined('RUNTIME_PATH') or define('RUNTIME_PATH',   APP_PATH.'Runtime/');   // 系统运行时目录
+defined('RUNTIME_PATH') or define('RUNTIME_PATH',   PATH.'Runtime/'.APP_PATH);   // 系统运行时目录
 defined('SE_PATH')      or define('SE_PATH',        RUNTIME_PATH.'Session/'); // session 存放目录
 defined('LOG_PATH')     or define('LOG_PATH',       RUNTIME_PATH.'Logs/'); // 应用日志目录
 defined('DATA_PATH')    or define('DATA_PATH',      RUNTIME_PATH.'Data/'); // 应用数据缓存目录

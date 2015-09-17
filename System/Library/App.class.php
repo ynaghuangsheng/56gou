@@ -19,6 +19,7 @@ class App {
         	
 				$controller = ucfirst(isset($url_array['controller'])?$url_array['controller']
 				:C('DEFAULT_CONTROLLER'));
+				C('V_CONTROLLER',$controller.'/');
 				$model = $controller;
 				$action = strtolower(isset($url_array['action'])?$url_array['action']:C('DEFAULT_ACTION'));
 				$params=isset($url_array['params'])?$url_array['params']:'';

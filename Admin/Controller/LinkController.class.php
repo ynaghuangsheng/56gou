@@ -1,5 +1,5 @@
 <?php
-class TagController extends CommconController {
+class LinkController extends CommconController {
 	
     //列表
 	public function index(){
@@ -20,35 +20,24 @@ class TagController extends CommconController {
 	//新增
 	public function adedit(){
 		   $this->assign('title','新建标签');
-		   $this->nav();
 		   $this->display('adedit.htpl');
 		
 	}
-	//新增
+    //新增处理
 	public function add(){
-		   $array['name']= trim($_REQUEST['name']);
+		   $array['web_name']= trim($_REQUEST['web_name']);
+		   $array['web_url']= trim($_REQUEST['web_url']);
+		   $array['contact']= trim($_REQUEST['contact']);
+		   $array['sort']= trim($_REQUEST['sort']);
     	   //print_r($array);
-		   if(!empty($array['name']) && $this->model->add($array)){
+		   if(!empty($array['web_name']) && !empty($array['web_url']) && $this->model->add($array)){
 		   	$this->assign('error_title','成功');
 		   }else{
 		    $this->assign('error_title','失败');  
 		   }
+		   $this->nav();
 		   $this->assign('title','信息提示');
-           $this->nav();
 		   $this->display('comm/error.htpl');
-		
-	}
-    //删除操作
-	public function del(){
-		   if($this->model->del($_REQUEST['id'])){
-			 header("location: ?controller=tag");
-			 exit;
-		   }else{
-		     $this->assign('title','信息提示');
-		     $this->assign('error_title','删除失败');
-		     $this->nav();
-		     $this->display('comm/error.htpl');
-		   }
 		
 	}
     //修改edit
@@ -62,37 +51,27 @@ class TagController extends CommconController {
 	}
     //更新
     public function update(){
-    	   $array['name']= trim($_REQUEST['name']);
+    	   $array['web_name']= trim($_REQUEST['web_name']);
+		   $array['web_url']= trim($_REQUEST['web_url']);
+		   $array['contact']= trim($_REQUEST['contact']);
+		   $array['sort']= trim($_REQUEST['sort']);
 		   if($this->model->update($array,'`id`='.$_REQUEST['id'])){
-		   	  header("refresh:2;url=?controller=tag&action=upedit&id=".$_REQUEST['id']); 
+		   	  header("refresh:2;url=?controller=link&action=upedit&id=".$_REQUEST['id']); 
 		   	  echo "正在更新，请稍等...";
 		   	  exit;
 		   };
 		   $this->assign('title','信息提示');
 		   $this->assign('error_title','更新失败');
-		   $nav[0]=Array('url'=>'?controller=tag&action=upedit&id='.$_REQUEST['id'],'text'=>'返回');
+		   $nav[0]=Array('url'=>'?controller=link&action=upedit&id='.$_REQUEST['id'],'text'=>'返回');
 		   $this->assign('nav',$nav);
 		   $this->display('comm/error.htpl');
 	}
-	
     //导航
 	public function nav(){ 
-		   $nav[0]=Array('url'=>'?controller=tag&action=adedit','text'=>'增加标签');
-           $nav[1]=Array('url'=>'?controller=tag','text'=>'标签列表');
+		   $nav[0]=Array('url'=>'?controller=link&action=adedit','text'=>'增加友连');
+           $nav[1]=Array('url'=>'?controller=link','text'=>'友连列表');
            $this->assign('nav',$nav);
            unset($nav);
-	}
-	
-    //生成标签文件
-	public function put(){
-		$content=$this->model->putSelect();
-		$content="<?php return ".var_export($content,true).";";
-		$filename=PATH."/Runtime/Home/Data/tag.php";
-		if(false === Storage::put($filename,$content)){
-			echo "更新标签库失败";
-		}else{
-		    echo "成功更新标签库";
-		}
 	}
 	
 }

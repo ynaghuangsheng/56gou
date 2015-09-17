@@ -30,7 +30,7 @@ class XieziController extends Controller {
 		   $this->assign('index','xiezi');
 		   $this->assign('list',$list);
 		   $this->assign('page',$page);
-		   $this->display('xiezi.htpl');
+		   $this->display('index.htpl');
 		
 	}
 }

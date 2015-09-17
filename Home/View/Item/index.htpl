@@ -4,7 +4,12 @@
 <div class="item">
      <div class="item_title">当前位置：<a href="/"> 我乐购</a> &gt; <a href="{$do['url']}">{$do['name']}</a> &gt; <a href="#">{$item['title']}</a></span></div>
      <div class="item_goods">
-          <div class="tupian"><img src="/Public/tbpic/{$item['iid']}_400x400.jpg"></div>
+          <div class="tupian">
+               <div id="tupian400">
+               <img src="/Public/tbpic/{$item['iid']}_400x400.jpg">
+               </div>
+               <ul></ul>
+          </div>
           <div class="itemtxt">
                <div class="txt">
                  <h3 class="title">{$item['title']}</h3>
@@ -37,7 +42,22 @@
      </div>
 </div>
 </div>
+<script type="text/javascript">
+<!--
+$picurl={$small};
+if($picurl.length==0){
+	$('.tupian ul').hide();
+}
+$.each( $picurl, function(i, n){
+	 $('.tupian ul').append("<li srctext=\""+n+"_400x400.jpg\"><img src=\""+n+"_80x80.jpg\"></li>");
+});
+$('.tupian li').live("click",function(){
+	   $pic400=$(this).attr("srctext");
+	   $('#tupian400 img').attr("src",$pic400);
+});
 
+//-->
+</script>
 <div class="bodyBox">
         <div class="itemlist"><h4>更多同类折扣商品</h4></div>
         {include file="goodslist.htpl"}

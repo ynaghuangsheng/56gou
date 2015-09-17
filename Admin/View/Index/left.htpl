@@ -1,3 +1,13 @@
+<!--if ($menuid==0)-->
+<h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>友情链接</h3>
+<ul>
+
+   <li class="sub_menu"><a href="javascript:;" data-uri="?controller=link" data-id="1" hidefocus="true">友链管理</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?controller=link&action=adedit" data-id="2" hidefocus="true">新建友链</a></li>
+	
+</ul>
+<!--endif-->
+
 
 <!--if ($menuid==1)-->
 <h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>商品采集</h3>
@@ -5,9 +15,11 @@
 	
    <li class="sub_menu"><a href="javascript:;" data-uri="?controller=tao" data-id="11" hidefocus="true">采集器管理</a></li>
    <li class="sub_menu"><a href="javascript:;" data-uri="?controller=tao&action=adedit" data-id="12" hidefocus="true">新建采集器</a></li>
-   
-
-	
+</ul>
+<h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>采集规则</h3>
+<ul>	
+   <li class="sub_menu"><a href="javascript:;" data-uri="?controller=rule" data-id="17" hidefocus="true">规则管理</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?controller=rule&action=adedit" data-id="18" hidefocus="true">新建规则</a></li>
 </ul>
 <h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>采集入库</h3>
 <ul>

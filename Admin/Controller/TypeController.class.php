@@ -15,7 +15,7 @@ class TypeController extends CommconController {
 		   $this->assign('page',$page->show());
 		   unset($list);
 		   $this->nav();
-		   $this->display('type.htpl');
+		   $this->display('index.htpl');
 	}
 	//新增
 	public function adedit(){
@@ -24,7 +24,7 @@ class TypeController extends CommconController {
 		   unset($typearr);
 		   $this->assign('title','新建类别');
 		   $this->nav();
-		   $this->display('type_adedit.htpl');
+		   $this->display('adedit.htpl');
 		
 	}
 	//新增
@@ -44,7 +44,7 @@ class TypeController extends CommconController {
 		   }
 		   $this->assign('title','信息提示');
            $this->nav();
-		   $this->display('error.htpl');
+		   $this->display('comm/error.htpl');
 		
 	}
     //删除操作
@@ -56,7 +56,7 @@ class TypeController extends CommconController {
 		     $this->assign('title','信息提示');
 		     $this->assign('error_title','删除失败');
 		     $this->nav();
-		     $this->display('error.htpl');
+		     $this->display('comm/error.htpl');
 		   }
 		
 	}
@@ -70,7 +70,7 @@ class TypeController extends CommconController {
 		   unset($typearr);
 		   $this->assign('title','修改类别');
 		   $this->nav();
-		   $this->display('type_upedit.htpl');
+		   $this->display('upedit.htpl');
 	}
     //更新
     public function update(){
@@ -89,7 +89,7 @@ class TypeController extends CommconController {
 		   $this->assign('error_title','更新失败');
 		   $nav[0]=Array('url'=>'?controller=type&action=upedit&id='.$_REQUEST['id'],'text'=>'返回');
 		   $this->assign('nav',$nav);
-		   $this->display('error.htpl');
+		   $this->display('comm/error.htpl');
 	}
 	
     //导航

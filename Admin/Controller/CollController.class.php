@@ -7,7 +7,11 @@ class CollController extends CommconController {
 	}
 	public function ruku() {
 		$this->assign('title','采集入库');
-		$this->display('coll_ruku.htpl');
+		$this->display('ruku.htpl');
+	}
+    public function rukus() {
+		$this->assign('title','采集入库');
+		$this->display('rukus.htpl');
 	}
 	public function rukuAdd() {
         $data=$this->model->itemSelect();
