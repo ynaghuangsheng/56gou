@@ -2,7 +2,7 @@
 class IndexController extends Controller {
 	 
 	public function index(){
-
+           $this->is404();
 		   $list=$this->model->goodsSelect(!empty($_REQUEST['page'])?$_REQUEST['page']:1,40);
            $data['total_rows']=$this->model->count;
            $data['list_rows']=40;
@@ -35,6 +35,14 @@ class IndexController extends Controller {
 		   $this->assign('index','index');
 		   
 		   $this->display('index.htpl');
+	}
+	
+	public function is404(){
+		  if(isset($_REQUEST['cat']) || isset($_REQUEST['start']) ||isset($_REQUEST['mod'])){
+		  	header('Location: /404');
+	        exit();
+		  	
+		  }
 	}
 	
 	

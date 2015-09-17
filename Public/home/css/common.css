@@ -6,7 +6,7 @@ body { height: 100%;background:#fafafa url();}
 fieldset, img { border: 0px; }
 table { border-collapse: collapse; border-spacing: 0; }
 a { color: #5e5e5e; text-decoration: none; }
-a:hover { color: #ff6c01; text-decoration: underline; }
+a:hover { color: #5e5e5e; text-decoration: underline; }
 :focus { outline: 0 none; }
 ul, li { list-style: none; }
 em { font-style: normal; }
