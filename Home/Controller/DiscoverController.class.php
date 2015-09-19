@@ -4,6 +4,8 @@ class DiscoverController extends Controller
 
     public function index()
     {
+        exit(345);
+        /*
            $no_page=isset($_REQUEST['page'])?$_REQUEST['page']:1;
            $count=40;
            $url='/discover/';
@@ -33,7 +35,7 @@ class DiscoverController extends Controller
 		   $this->assign('page',$page);
 		   $this->assign('head',$head);
 		   
-		   $this->display('discover.htpl');
+		   $this->display('discover.htpl');*/
     }
 }
 
