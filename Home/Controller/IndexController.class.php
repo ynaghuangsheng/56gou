@@ -39,7 +39,9 @@ class IndexController extends Controller {
 	
 	public function is404(){
 		  if(isset($_REQUEST['cat']) || isset($_REQUEST['start']) ||isset($_REQUEST['mod'])){
-		  	header('Location: /404');
+		  	//header('Location: /404');
+            header('HTTP/1.1 404 Not Found');
+            header("status: 404 Not Found");
 	        exit();
 		  	
 		  }
