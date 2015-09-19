@@ -5,40 +5,40 @@
                  <div class="lists">
                  <ul>
                      <li class="h3 jing"><span><a>精选</a></span></li>
-                     <li><span><a href="/guang/yifu/{EF:urlencode("连衣裙")}/">连衣裙</a></span></li>
+                     <li><span><a href="/guang/yifu/{EF:urlencode("连衣裙")}/">连衣裙</a><em></em></span></li>
                      <li><span><a href="/guang/yifu/{EF:urlencode("开衫")}/">开衫</a></span></li>
-                     <li><span><a href="/guang/yifu/{EF:urlencode("衬衫")}/">衬衫</a></span></li>
-                     <li><span><a href="/guang/yifu/{EF:urlencode("t恤")}/">t恤</a></span></li>
-                     <li><span><a href="/guang/yifu/{EF:urlencode("短裤")}/">短裤</a></span></li>
+                     <li><span><a href="/guang/yifu/{EF:urlencode("衬衫")}/">衬衫</a><em></em></span></li>
+                     <li><span><a href="/guang/yifu/{EF:urlencode("t恤")}/">t恤</a><em></em></span></li>
+                     <li><span><a href="/guang/yifu/{EF:urlencode("短裤")}/">短裤</a><em></em></span></li>
                  </ul>
                  <ul>
                      <li class="h3 yifu"><span><a href="/guang/yifu/">衣服</a></span></li>
-                     <li><span><a href="/guang/yifu/{EF:urlencode("连衣裙")}/">连衣裙</a></span></li>
+                     <li><span><a href="/guang/yifu/{EF:urlencode("连衣裙")}/">连衣裙</a><em></em></span></li>
                      <li><span><a href="/guang/yifu/{EF:urlencode("开衫")}/">开衫</a></span></li>
-                     <li><span><a href="/guang/yifu/{EF:urlencode("衬衫")}/">衬衫</a></span></li>
-                     <li><span><a href="/guang/yifu/{EF:urlencode("t恤")}/">t恤</a></span></li>
-                     <li><span><a href="/guang/yifu/{EF:urlencode("打底衫")}/">打底衫</a></span></li>
+                     <li><span><a href="/guang/yifu/{EF:urlencode("衬衫")}/">衬衫</a><em></em></span></li>
+                     <li><span><a href="/guang/yifu/{EF:urlencode("t恤")}/">t恤</a><em></em></span></li>
+                     <li><span><a href="/guang/yifu/{EF:urlencode("打底衫")}/">打底衫</a><em></em></span></li>
                  </ul>
                  <ul>
                      <li class="h3 xiezi"><span><a href="/guang/xiezi/">鞋子</a></span></li>
-                     <li><span><a href="/guang/xiezi/{EF:urlencode("单鞋")}/">单鞋</a></span></li>
-                     <li><span><a href="/guang/xiezi/{EF:urlencode("帆布鞋")}/">帆布鞋</a></span></li>
+                     <li><span><a href="/guang/xiezi/{EF:urlencode("单鞋")}/">单鞋</a><em></em></span></li>
+                     <li><span><a href="/guang/xiezi/{EF:urlencode("帆布鞋")}/">帆布鞋</a><em></em></span></li>
                      <li><span><a href="/guang/xiezi/{EF:urlencode("休闲鞋")}/">休闲鞋</a></span></li>
-                     <li><span><a href="/guang/xiezi/{EF:urlencode("运动鞋")}/">运动鞋</a></span></li>
+                     <li><span><a href="/guang/xiezi/{EF:urlencode("运动鞋")}/">运动鞋</a><em></em></span></li>
                  </ul>
                  <ul>
                      <li class="h3 baobao"><span><a href="/guang/baobao/">包包</a></span></li>
-                     <li><span><a href="/guang/baobao/{EF:urlencode("单肩包")}/">单肩包</a></span></li>
+                     <li><span><a href="/guang/baobao/{EF:urlencode("单肩包")}/">单肩包</a><em></em></span></li>
                      <li><span><a href="/guang/baobao/{EF:urlencode("双肩包")}/">双肩包</a></span></li>
-                     <li><span><a href="/guang/baobao/{EF:urlencode("链条包")}/">链条包</a></span></li>
+                     <li><span><a href="/guang/baobao/{EF:urlencode("链条包")}/">链条包</a><em></em></span></li>
                      <li><span><a href="/guang/baobao/{EF:urlencode("钱包")}/">钱包</a></span></li>
                  </ul>
                  <ul>
                      <li class="h3 peishi"><span><a href="/guang/peishi/">配饰</a></span></li>
                      <li><span><a href="/guang/peishi/{EF:urlencode("项链")}/">项链</a></span></li>
-                     <li><span><a href="/guang/peishi/{EF:urlencode("手链")}/">手链</a></span></li>
+                     <li><span><a href="/guang/peishi/{EF:urlencode("手链")}/">手链</a><em></em></span></li>
                      <li><span><a href="/guang/peishi/{EF:urlencode("耳钉")}/">耳钉</a></span></li>
-                     <li><span><a href="/guang/peishi/{EF:urlencode("手表")}/">手表</a></span></li>
+                     <li><span><a href="/guang/peishi/{EF:urlencode("手表")}/">手表</a><em></em></span></li>
                  </ul>
                  </div>
                  <div class="clear"></div>

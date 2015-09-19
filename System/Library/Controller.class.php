@@ -4,7 +4,6 @@ class Controller{
          
 	    protected $smarty =null;
 	    public   $model=null;
-		
         public function __construct() {
 				$this->smarty = new Templates;//初始化模板类
 				//控制器初始化

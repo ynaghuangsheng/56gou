@@ -25,6 +25,7 @@ class ItemController extends Controller {
 		$this->assign('index',$index['tag']);
 		$this->assign('do',$index);
 		$this->assign('item',$item);
+		$this->assign('small',$this->model->small($item['small_images'],$item['pic_url']));//
 		$this->assign('shop',$shop);
 		$head['title']="{$item['title']}-我乐购";
 		$head['key']="{$item['title']},{$seoTag},56购物网,淘宝,天猫,特卖,折扣,打折";
@@ -34,6 +35,6 @@ class ItemController extends Controller {
 		unset($shop);
 		unset($list);
 		
-		$this->display('item.htpl');
+		$this->display('index.htpl');
 	}
 }

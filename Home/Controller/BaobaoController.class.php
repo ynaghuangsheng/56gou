@@ -30,7 +30,7 @@ class BaobaoController extends Controller {
 		   $this->assign('index','baobao');
 		   $this->assign('list',$list);
 		   $this->assign('page',$page);
-		   $this->display('baobao.htpl');
+		   $this->display('index.htpl');
 		
 	}
 }

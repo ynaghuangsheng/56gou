@@ -15,13 +15,13 @@ class TagController extends CommconController {
 		   $this->assign('page',$page->show());
 		   unset($list);
 		   $this->nav();
-		   $this->display('tag.htpl');
+		   $this->display('index.htpl');
 	}
 	//新增
 	public function adedit(){
 		   $this->assign('title','新建标签');
 		   $this->nav();
-		   $this->display('tag_adedit.htpl');
+		   $this->display('adedit.htpl');
 		
 	}
 	//新增
@@ -35,7 +35,7 @@ class TagController extends CommconController {
 		   }
 		   $this->assign('title','信息提示');
            $this->nav();
-		   $this->display('error.htpl');
+		   $this->display('comm/error.htpl');
 		
 	}
     //删除操作
@@ -47,7 +47,7 @@ class TagController extends CommconController {
 		     $this->assign('title','信息提示');
 		     $this->assign('error_title','删除失败');
 		     $this->nav();
-		     $this->display('error.htpl');
+		     $this->display('comm/error.htpl');
 		   }
 		
 	}
@@ -58,7 +58,7 @@ class TagController extends CommconController {
 		   unset($data);
 		   $this->assign('title','修改标签');
 		   $this->nav();
-		   $this->display('tag_upedit.htpl');
+		   $this->display('upedit.htpl');
 	}
     //更新
     public function update(){
@@ -72,7 +72,7 @@ class TagController extends CommconController {
 		   $this->assign('error_title','更新失败');
 		   $nav[0]=Array('url'=>'?controller=tag&action=upedit&id='.$_REQUEST['id'],'text'=>'返回');
 		   $this->assign('nav',$nav);
-		   $this->display('error.htpl');
+		   $this->display('comm/error.htpl');
 	}
 	
     //导航
@@ -87,8 +87,8 @@ class TagController extends CommconController {
 	public function put(){
 		$content=$this->model->putSelect();
 		$content="<?php return ".var_export($content,true).";";
-		$filename=PATH."Home/Runtime/Data/tag.php";
-		if(false === file_put_contents($filename,$content)){
+		$filename=PATH."/Runtime/Home/Data/tag.php";
+		if(false === Storage::put($filename,$content)){
 			echo "更新标签库失败";
 		}else{
 		    echo "成功更新标签库";

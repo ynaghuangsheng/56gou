@@ -21,7 +21,7 @@ class GuangController extends Controller {
 		
 		   $this->assign('head',$head);
 		   $this->assign('index','guang');
-		   $this->display('guang.htpl');
+		   $this->display('index.htpl');
 		
 	}
     public function yifu(){
@@ -55,7 +55,7 @@ class GuangController extends Controller {
 		
 		   $this->assign('head',$head);
 		   $this->assign('index','guang');
-		   $this->display('guang.htpl');
+		   $this->display('index.htpl');
 		
 	}
     public function xiezi(){
@@ -89,7 +89,7 @@ class GuangController extends Controller {
 		
 		   $this->assign('head',$head);;
 		   $this->assign('index','guang');
-		   $this->display('guang.htpl');
+		   $this->display('index.htpl');
 		
 	}
     public function baobao(){
@@ -123,7 +123,7 @@ class GuangController extends Controller {
 		
 		   $this->assign('head',$head);
 		   $this->assign('index','guang');
-		   $this->display('guang.htpl');
+		   $this->display('index.htpl');
 		
 	}
     public function peishi(){
@@ -157,7 +157,7 @@ class GuangController extends Controller {
 		
 		   $this->assign('head',$head);
 		   $this->assign('index','guang');
-		   $this->display('guang.htpl');
+		   $this->display('index.htpl');
 		
 	}
 	

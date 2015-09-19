@@ -4,7 +4,7 @@ $(function () {
            },function(){
         	   $(this).removeClass("active");
               });
-	    $(".lazy").lazyload({ placeholder: "images/blue-loading.gif", effect:"fadeIn",threshold:200 });
+	    $(".lazy").lazyload({ placeholder: "/Public/home/images/blue-loading.gif", effect:"fadeIn",threshold:150 });
 	    floatScroll();    
 });
 

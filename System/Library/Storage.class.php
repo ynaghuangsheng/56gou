@@ -29,7 +29,7 @@ class Storage{
    static public function put($filename,$content,$type=''){
         $dir         =  dirname($filename);
         if(!is_dir($dir))
-            mkdir($dir,0755,true);
+            self::mkdir($dir);
         if(false === file_put_contents($filename,$content)){
             //E(L('_STORAGE_WRITE_ERROR_').':'.$filename);
         }else{
@@ -106,7 +106,7 @@ class Storage{
         return $info[$name];
     }
    //文件检测 不存在生成
-   static public function make_dir($dir){
+   static public function mkdir($dir){
 		  $folder=$dir;
 	      if (!file_exists($folder)){
 	      	@umask(0);

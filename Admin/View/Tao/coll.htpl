@@ -10,7 +10,7 @@
 
 </div>
 
-<form method="post" action="?controller=tao&action=colladd">
+<!-- ?controller=tao&action=colladd -->
 <div class="pad_lr_10" >
 
     <div class="J_tablelist table_list" data-acturi="/index.php?g=admin&m=ftxrobots&a=ajax_edit">
@@ -54,23 +54,84 @@
 </div>
 
 <div class="btn_wrap_fixed">
-        <input type="hidden" name="cid" value="{$cid}">
-        <input name="submit" type="submit" class="btn btn_submit"  value="加入采集" /> 
+        <input name="submit" type="submit" cid="{$cid}" class="btn btn_submit"  value="加入采集" /> 
         <div id="pages">{$page}</div>
 </div>
-</form>
+
 <script type="text/javascript" language="javascript"> 
+    $adIds="";
+    $cid='';
+    $click=true;
+    isCheck();
+	$('input:submit').live("click",function(){
+		if($click){
+		$click=false;
+		$adIds=getCheckAdIds();
+		$cid=$(this).attr("cid");
+		//alert($adIds);
+		if($adIds==""){
+			alert("必须选择一个产品");
+			$click=true;
+		}else{
+			$.ajax({
+		        type:"get",
+		        url:'?controller=tao&action=colladd&id='+$adIds+'&cid='+$cid+'&url='+Math.random(),
+		        cache:false, 
+		        dataType:'json', 
+		        success:function (data) {
+		    	    //alert(data);
+		            if(data.msg){
+		            	alert("完成");
+		            	$click=true;
+		            	isCheck();
+		            }else{
+		            	alert("失败");
+		            	$click=true;
+		            	isCheck();
+		            }
+		        },
+		        error : function() {    
+		            // view("异常！");    
+		            alert("异常！");
+		            $click=true;
+		            isCheck();
+		       } 
+		     });
+			
+		}
+		}
+		
+   
+	});
+	function isCheck() { 
+		$('input:checkbox').each(function(){
+			 var obj = $(this);
+	         $iid= obj.val();
+	         if(!obj.attr("disabled")){
+	            $changeUrl="?controller=tao&action=getTem&iid="+$iid+"&url="+Math.random();
+	            $.get($changeUrl,function(str){
+	        	   if(str == 1){ obj.attr("checked",true).attr("disabled",true);}
+	           }); 
+	         }          
+	    });
+	}
 
-	$('input:checkbox').each(function(){
-		 var obj = $(this);
-         $iid= obj.val();
-         $changeUrl="?controller=tao&action=getTem&iid="+$iid+"&url="+Math.random();
-         $.get($changeUrl,function(str){
-        	 if(str == 1){ 
-        		 obj.attr("checked",true).attr("disabled",true);
-             }
-         });           
-    });
-
+	
+	function getCheckAdIds() {  
+        $adId = ""; 
+        $ii=0; 
+        $("input:checkbox:checked").each(function(i){
+            if(!$(this).attr("disabled")){  
+               if(0==$ii){  
+                $adId = $(this).val();  
+               }else{  
+                $adId += (","+$(this).val());  
+               }
+               $ii++
+            }
+        });  
+        //alert(adId);  
+        return $adId;  
+    }  
 </script>
 {include file="foot.htpl"}

@@ -2,16 +2,12 @@
 class IndexController extends Controller {
 	 
 	public function index(){
-
-	    /**
-	     * 这个Action改一下，作用只是显示一个首页而已，显示所有商品的任务交给新建的Descover控制器
-	     */
-	    
+           $this->is404();
 		   $list=$this->model->goodsSelect(!empty($_REQUEST['page'])?$_REQUEST['page']:1,40);
            $data['total_rows']=$this->model->count;
            $data['list_rows']=40;
            $data['now_page']= !empty($_REQUEST['page'])?$_REQUEST['page']:1;
-           $data['url']='?page={page}';
+           $data['url']='/discover/page/{page}/#goodsbox';
            $page=new Page($data);unset($data);
            $page=$page->show();
            $this->assign('list',$list);unset($list);
@@ -29,6 +25,9 @@ class IndexController extends Controller {
 		   $peishiData=$this->model->typeSelect(10,'`cid`=4');
 		   $this->assign('peishiData',$peishiData);
 		   
+		   $linkData=$this->model->linkSelect();
+		   $this->assign('link',$linkData);
+		   
 		   $head['title']='我乐购,折扣购物,打折购物,专业的女性时尚品牌商品导购网';
 		   $head['key']='我乐购,56购物网 ,特卖,折扣,打折';
 		   $head['des']='我乐购,汇聚淘宝、天猫等各大购物商城最优质的折扣商品,每天为你推荐最新的名牌女装、品牌女包、高档女装、潮流服饰、美容护肤品等折扣信息-享折扣就上56购';
@@ -37,5 +36,17 @@ class IndexController extends Controller {
 		   
 		   $this->display('index.htpl');
 	}
+	
+	public function is404(){
+		  if(isset($_REQUEST['cat']) || isset($_REQUEST['start']) ||isset($_REQUEST['mod'])){
+		  	header('Location: /404');
+	        exit();
+		  	
+		  }
+	}
+	
+	
+	
+	
 	
 }

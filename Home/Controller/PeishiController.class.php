@@ -30,7 +30,7 @@ class PeishiController extends Controller {
 		   $this->assign('index','peishi');
 		   $this->assign('list',$list);
 		   $this->assign('page',$page);
-		   $this->display('peishi.htpl');
+		   $this->display('index.htpl');
 		
 	}
 }

@@ -37,6 +37,8 @@ class TaoModel{
     public function coll($id,$page){
 		  $table= M('collect');
 		  $coll= $table->where('`id`='.$id)->find();
+		  $table= M('rule');
+		  $rule= $table->where('`selected`=1')->find();
 		  V("Taobao");
 	      $c = new TopClient;
           $c->appkey = '23182491';//appkey;
@@ -49,15 +51,18 @@ class TaoModel{
               $req->setCat($coll['cat']);
           }
           //$req->setItemloc("杭州"); 
-          $req->setSort("tk_rate_des");
-          $req->setIsTmall("true");  //是否天猫商城
+          //echo $rule['sort'];
+          $req->setSort($rule['sort']);
+          if($rule['tmall']){
+                $req->setIsTmall("true");  //是否天猫商城
+          }
           //$req->setIsOverseas("false"); //是否海外商品
 
-          $req->setStartPrice(50); 
-          $req->setEndPrice(1);
+          $req->setStartPrice($rule['start_price']); 
+          $req->setEndPrice($rule['end_price']);
 
-          $req->setStartTkRate(5030); //拥金上
-          $req->setEndTkRate(100);    //拥金下
+          $req->setStartTkRate($rule['start_tk_rate']); //拥金上
+          $req->setEndTkRate($rule['end_tk_rate']);    //拥金下
 
           $req->setPlatform(1);
           $req->setPageNo($page);
