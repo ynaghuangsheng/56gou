@@ -29,9 +29,12 @@
              <!--loop $list $v-->
              <tr>
                  <td align="center"><input type="checkbox" name="id[]"  value="{$v['id']}"></td>
-                 <td align="left"><img src="{$v['pic_url']}_60x60.jpg" width="50px" height="50px"></td>
+                 <td align="left"><a target="_blank" href="{$v['pic_url']}_480x480.jpg" title="点击查看大图"><img src="{$v['pic_url']}_60x60.jpg" width="50px" height="50px"></a></td>
                  <td align="left">{$v['iid']}</td>
-                 <td align="left">{$v['title']} <span style="display: inline-block;"><a href="{$v['item_url']}">链接</a></span></td>
+                 <td align="left">{$v['title']}
+               					  <span style="display: inline-block; font-weight:bold;"><a target="_blank" href="{$v['item_url']}">淘宝链接</a></span>
+               					  <span style="display: inline-block; font-weight:bold;"><a target="_blank" href="/item/{$v['id']}">本地链接</a></span>
+				</td>
                  <td align="left">{$v['price']}</td>
                  <td align="left">{$v['zk_price']}</td>
                  <td align="left">{$v['rate']}折</td>
