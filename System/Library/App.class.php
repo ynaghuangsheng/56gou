@@ -22,11 +22,10 @@ class App {
 				C('V_CONTROLLER',$controller.'/');
 				$model = $controller;
 				$action = strtolower(isset($url_array['action'])?$url_array['action']:C('DEFAULT_ACTION'));
-				$params=isset($url_array['params'])?$url_array['params']:'';
-				
-				if($params)
-				$_GET   =  array_merge($params,$_GET);
-				
+				if(C('DEFAULT_URL_TYPE')>1){ 
+					$params=isset($url_array['params'])?$url_array['params']:array();
+					$_REQUEST = $params;
+				}
 				$commconfile =  C_PATH.'CommconController'.EXT;
 				if(file_exists($commconfile))
 				  include $commconfile;  //如果存在用户的公共控制器 则加载

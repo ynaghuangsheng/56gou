@@ -20,13 +20,14 @@ final class Route{
                                 break;
                         case 2: 
 						        
-						        if (isset($_SERVER['PATH_INFO']))
-								   
-                                   $this->url_query = explode('/', trim($_SERVER['PATH_INFO'], "/")); 
-								else
+						        if (isset($_SERVER['PATH_INFO'])){
+                                   $this->url_query = explode('/', trim($_SERVER['PATH_INFO'], "/"));
+                                   $this->url_type = $url_type; 
+						        }else{
 								   $this->url_query ='';
-								   $this->url_type = $url_type;
-                                break;
+								   $this->url_type = $url_type; 
+						        }
+						        break;
 						default:
 						        trigger_error("指定的URL模式不存在！");
                 }
@@ -40,6 +41,8 @@ final class Route{
         public function getUrlArray(){
                 $this->makeUrl();
                 return $this->route_url;
+                
+                
         }
         /**
          * @access      public
@@ -50,8 +53,9 @@ final class Route{
                                 $this->querytToArray();
                                 break;
                         case 2:
+                        	   
                                 $this->pathinfoToArray();
-                                break;
+                                break;                
                 }
         }
         /**
@@ -63,8 +67,12 @@ final class Route{
                 $array = $tmp = array();
                 if (count($arr) > 0) {
                         foreach ($arr as $item) {
+                        	if(stripos($item,'=')!==false ){
                                 $tmp = explode('=', $item);
                                 $array[$tmp[0]] = $tmp[1];
+                        	}else{
+                        		$array[$item] ='';
+                        	}
                         }
                         if (isset($array['controller'])) {
                                 $this->route_url['controller'] = $array['controller'];
@@ -89,15 +97,9 @@ final class Route{
          * @access      public
          */
         public function pathinfoToArray(){
+        	   
 			   if(!empty($this->url_query)){
 				    $pathinfo = $this->url_query;
-				    // 获取 app 
-					if(!empty($pathinfo[0])){ 
-					   if(ucfirst($pathinfo[0]) == C("DEFAULT_MODULE") || ucfirst($pathinfo[0]) == C("ADMIN_MODULE")){ 
-                         $this->route_url['app'] = $pathinfo[0];  
-                         array_shift($pathinfo); //将数组开头的单元移出数组
-					   }
-					}
 					// 获取 controller
 					if(!empty($pathinfo[0])){  
                       $this->route_url['controller'] = $pathinfo[0];  
@@ -115,7 +117,7 @@ final class Route{
 						 if(isset($pathinfo[$i]) && isset($pathinfo[$i+1]) ){
                            $this->route_url['params'][$pathinfo[$i]]=$pathinfo[$i+1]; 
 						 }else{
-						   $this->route_url['params'][$pathinfo[$i]]=isset($pathinfo[$i+1])?$pathinfo[$i+1]:''; 
+						   //$this->route_url['params'][$pathinfo[$i]]=isset($pathinfo[$i+1])?$pathinfo[$i+1]:''; 
 						 }
                       }
 					}
