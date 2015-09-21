@@ -4,7 +4,7 @@ class DiscoverController extends Controller
 
     public function index()
     {
-        
+        /*
         $Goods = M('goods');
 
         $sql = 'SELECT `id`  ';
@@ -14,6 +14,31 @@ class DiscoverController extends Controller
         
         $count = 0;
         
+        foreach ($rs as $item){
+            $url = 'http://www.56gou.com/item/'.$item['id'];
+            array_push($urls, array(
+                'url'=>$url,
+                'baidu_push'=>0
+            ));
+        }*/
+        
+        //print_r($urls);
+        
+        //$Seo = M('seo');
+        //$rs = $Seo->where('`id` > 400')->limit(0,100)->select();
+        //print_r($rs);
+        //print_r($urls[0]);
+        //print_r( $Seo->data($urls)->addAll());
+        
+        /*
+        $urls = array();
+        foreach ($rs as $item){
+            array_push($urls, $item['url']);
+        }
+        
+        $this->tobaidu($urls);*/
+        
+        /*
         foreach ($rs as $item){
             
             if ($count < 200){
@@ -32,7 +57,7 @@ class DiscoverController extends Controller
             }
             
             
-        }
+        }*/
 
         
         
