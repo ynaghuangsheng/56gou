@@ -24,19 +24,45 @@ class DiscoverController extends Controller
         
         //print_r($urls);
         
-        //$Seo = M('seo');
-        //$rs = $Seo->where('`id` > 400')->limit(0,100)->select();
+        $Seo = M('seo');
+        
+        do {
+            
+            $rs = $Seo->where('`baidu_push`=0')->limit(0,100)->select();
+            
+            if (count($rs)>0){
+            
+                $urls = array();
+                $ids = array();
+                foreach ($rs as $item){
+                    array_push($urls, $item['url']);
+                    array_push($ids, $item['id']);
+                }
+            
+                $remain = $this->tobaidu($urls);
+                
+                if ($remain) {
+                    
+                    $Seo->where(array(
+                        'id'=>array('in'=>implode(',',$ids))
+                    ))->setField(array('baidu_push'=>1));
+                    
+                }else{
+                    break;
+                }
+                 
+            }else{
+                break;
+            }
+            
+        }while (count($rs)==100);
+        
+
         //print_r($rs);
         //print_r($urls[0]);
         //print_r( $Seo->data($urls)->addAll());
         
-        /*
-        $urls = array();
-        foreach ($rs as $item){
-            array_push($urls, $item['url']);
-        }
-        
-        $this->tobaidu($urls);*/
+
         
         /*
         foreach ($rs as $item){
@@ -69,6 +95,10 @@ class DiscoverController extends Controller
     
     private function tobaidu($urls) {
         
+        return 400;
+        
+        /*
+        
         $api = 'http://data.zz.baidu.com/urls?site=www.56gou.com&token=X6HOL7xoGJMH6ZPC';
         $ch = curl_init();
         $options =  array(
@@ -83,6 +113,14 @@ class DiscoverController extends Controller
         echo '<pre>';
         echo $result;
         echo '</pre>';
+        
+        $obj_rs = json_decode($result,true);
+        if (isset($obj_rs['error'])){
+            return false;
+        }else{
+            return $obj_rs['remain'];
+        }
+        */
         
     }
 }

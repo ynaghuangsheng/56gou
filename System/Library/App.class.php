@@ -34,7 +34,7 @@ class App {
                 $controller = new $controller;
                 if(file_exists($modelfile))
                   $controller->model($model);
-                        
+                
                 if(method_exists($controller, $action)){
                     $controller ->$action();
                 }else{
