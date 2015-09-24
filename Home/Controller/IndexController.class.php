@@ -55,6 +55,9 @@ class IndexController extends Controller {
 	
 	
 	public function sitemap() {
+	    
+	    header('Content-type: text/plain');
+	    
 	    $Seo = M('seo');
 	    
 	    $rs = $Seo->select();
