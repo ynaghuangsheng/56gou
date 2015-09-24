@@ -7,6 +7,8 @@ RewriteRule ^cat- /index.php?controller=index&action=direct404 [L]
 RewriteRule ^jump /index.php?controller=index&action=direct404 [L]
 RewriteRule ^start /index.php?controller=index&action=direct404 [L]
 
+RewriteRule ^sitemap.txt /index.php?controller=index&action=sitemap [L]
+
 RewriteRule ^discover/page/([0-9]+)/?$ /index.php?controller=index&page=$1 [L]
 
 RewriteRule ^(yifu|xiezi|baobao|peishi)/?$ /index.php?controller=$1 [L]

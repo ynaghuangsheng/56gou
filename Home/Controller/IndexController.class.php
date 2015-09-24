@@ -54,7 +54,16 @@ class IndexController extends Controller {
 	}
 	
 	
-	
+	public function sitemap() {
+	    $Seo = M('seo');
+	    
+	    $rs = $Seo->select();
+	    
+	    foreach ($rs as $item){
+	        echo $item[url].PHP_EOL;
+	    }
+	    exit();
+	}
 	
 	
 }
