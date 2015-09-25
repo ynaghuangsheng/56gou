@@ -15,10 +15,10 @@
 
      /* 数据库设置 */
 	'DB_TYPE'               =>  'mysql',    //数据库类型
-    'DB_HOST'               =>  'localhost', // 服务器地址
-    'DB_NAME'               =>  '56g',          // 数据库名
-    'DB_USER'               =>  'root',      // 用户名
-    'DB_PWD'                =>  '19860301',          // 密码
+    'DB_HOST'               =>  'hdm153886378.my3w.com', // 服务器地址
+    'DB_NAME'               =>  'hdm153886378_db',          // 数据库名
+    'DB_USER'               =>  'hdm153886378',      // 用户名
+    'DB_PWD'                =>  'yang19860301',          // 密码
 	'DB_PREFIX'             =>  '',    // 数据库表前缀
 	'DB_PARAMS'             =>  '',//数据库连接标识; pconn 为长久链接，默认为即时链接
     'DB_PORT'               =>  '3306',        // 端口
@@ -26,7 +26,7 @@
 	   
 	/* SESSION设置 */
     'SESSION_AUTO_START'    =>  true,    // 是否自动开启Session
-    'SESSION_OPTIONS'       =>  array('path'=>SE_PATH,'expire'=>3*3600,'cache_limiter'=>'private','cache_expire'=>30,), // session 配置数组 支持type name id path expire domain 等参数
+    'SESSION_OPTIONS'       =>  array('path'=>SE_PATH,'expire'=>3*3600,/*'cache_limiter'=>'private','cache_expire'=>30,*/), // session 配置数组 支持type name id path expire domain 等参数
     'SESSION_TYPE'          =>  '', // session hander类型 默认无需设置 除非扩展了session hander驱动
     'SESSION_PREFIX'        =>  '', // session 前缀
     //'VAR_SESSION_ID'      =>  'session_id',     //sessionID的提交变量   

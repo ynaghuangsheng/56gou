@@ -8,7 +8,7 @@ class System {
       // 注册AUTOLOAD方法
 	  spl_autoload_register('System::autoload');
 	  $runtimefile  = RUNTIME_PATH.'~runtime.php';
-	  if(!APP_DEBUG && Storage::has($runtimefile)){
+	  if(/*!APP_DEBUG && Storage::has($runtimefile)*/false){
 		 Storage::load($runtimefile);	 
 	  }else{    
 			if(Storage::has($runtimefile)){
@@ -48,7 +48,7 @@ class System {
       if(!is_dir(SE_PATH)){//检测是否存在模板文件夹
             	Storage::mkdir(SE_PATH);
       }
-	  //session(C('SESSION_OPTIONS'));
+	  session(C('SESSION_OPTIONS'));
 	  // 运行应用 
       App::run();  
 	}
