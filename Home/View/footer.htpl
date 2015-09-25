@@ -9,7 +9,7 @@
      </div>
      <!--endif-->
      <div class="f_body">
-          <span>Copyright © 2010-2015 56gou.com All rights reserved.</span>
+          <span>Copyright © 2010-2015 56gou.com All rights reserved.</span><a href="http://webscan.360.cn/index/checkwebsite/url/www.56gou.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/c7b5d7a066715e9835e9a1ff5e5e6686/?size=74x27"/></a>
      </div>
 </div>
 </div>
@@ -32,5 +32,6 @@
         win.alimamatk_onload.push(o);
     })(window,document);
 </script>
+
 </body>
 </html>
