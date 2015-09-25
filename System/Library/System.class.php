@@ -8,7 +8,7 @@ class System {
       // 注册AUTOLOAD方法
 	  spl_autoload_register('System::autoload');
 	  $runtimefile  = RUNTIME_PATH.'~runtime.php';
-	  if(/*!APP_DEBUG && Storage::has($runtimefile)*/false){
+	  if(!APP_DEBUG && Storage::has($runtimefile)){
 		 Storage::load($runtimefile);	 
 	  }else{    
 			if(Storage::has($runtimefile)){
@@ -27,9 +27,23 @@ class System {
 				 $content   .= compile($file);
               }
           }
-          // 加载应用模式配置文件
+          // 加载系统配置文件
           foreach ($mode['config'] as $key=>$file){
               C(include $file);
+          }
+          //当前项目应用配置文件
+          $cnfig_file=APP_PATH.'Conf/Convention.php';
+          if(is_file($cnfig_file)){
+          	//如果存在则加载
+          	C(include $cnfig_file);
+          }
+          //当前项目函数库
+          $functions_file=APP_PATH.'Commcon/Functions.php';
+	      if(is_file($functions_file)) {
+	      	    //如果存在则加载
+                include $functions_file;
+                if(!APP_DEBUG)
+				 $content   .= compile($functions_file);
           }
 		  
 		  // 加载模式别名定义
