@@ -1,12 +1,29 @@
 {include file="header.htpl"}
 
+<script type="text/javascript">
+var jiathis_config = {
+    shareImg:{
+        "showType":"MARK",
+        "bgColor":"#ff318c",
+        "txtColor":"#fff",
+        "text":"分享给朋友",
+        "services":"",
+        "position":"",
+        "imgwidth":"",
+        "imgheight":"",
+        "divname":""
+    }
+} 
+</script>
+<script type='text/javascript' src='http://v3.jiathis.com/code/jia.js' charset='utf-8'></script> 
+
 <div class="itemBox">
 <div class="item">
      <div class="item_title">当前位置：<a href="/"> 我乐购</a> &gt; <a href="{$do['url']}">{$do['name']}</a> &gt; <a href="#">{$item['title']}</a></span></div>
      <div class="item_goods">
           <div class="tupian">
                <div id="tupian400">
-               <img src="/Public/tbpic/{$item['iid']}_400x400.jpg">
+               <img class="JIATHIS_IMG_OK" src="/Public/tbpic/{$item['iid']}_400x400.jpg">
                </div>
                <ul></ul>
           </div>
