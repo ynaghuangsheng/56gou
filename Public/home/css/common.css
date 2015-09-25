@@ -150,8 +150,8 @@ font: 12px/1.5 'Hiragino Sans GB','Microsoft Yahei',tahoma,sans-serif;
 .item_title span{line-height:35px;font-size:14px;}
 .item_goods{width:100%;height:auto;margin-top:35px;}
 .item_goods .tupian{width:auto;height:auto;float:left;text-align:center;display: inline-block;border: 1px solid #efefef;background:#fff;position:relative;}
-.item_goods #tupian400{width:auto;height:auto;font-size:0px;line-height:0px;display:block;margin-left:auto;margin-right:auto;}
-.item_goods #tupian400 img{margin:20px;}
+.item_goods #tupian400{width:auto;height:auto;font-size:0px;line-height:0px;display:block;margin-left:auto;margin-right:auto;padding:20px;}
+.item_goods #tupian400 img{}
 .item_goods .itemtxt{float:left;position:relative;margin-left:-1px;}
 .item_goods .txt{padding:15px;border:1px solid #efefef;background:#fff;}
 .item_goods .title{line-height:20px;font-size:16px;font-weight:500;padding:5px 0 15px 0;border-bottom:1px dashed #efefef;width:500px;color:#666;}
