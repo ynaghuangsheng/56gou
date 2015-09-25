@@ -58,12 +58,26 @@ class IndexController extends Controller {
 	    
 	    header('Content-type: text/plain');
 	    
-	    $Seo = M('seo');
+	    $Seo = M('goods');
 	    
 	    $rs = $Seo->select();
 	    
+	    $static_urls = array(
+	        '',
+	        '/guang/',
+	        '/yifu/',
+	        '/xiezi/',
+	        '/baobao/',
+	        '/peishi/',
+	        '/discover/page/2',
+	    );
+	    
+	    foreach ($static_urls as $url){
+	        echo 'http://www.56gou.com'.$url.PHP_EOL;
+	    }
+	    
 	    foreach ($rs as $item){
-	        echo $item[url].PHP_EOL;
+	        echo 'http://www.56gou.com/item/'.$item[id].PHP_EOL;
 	    }
 	    exit();
 	}
