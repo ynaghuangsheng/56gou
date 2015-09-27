@@ -2,19 +2,19 @@
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} m.56gou.com
-#直接访问域名而没有参数的情况下直接重写到入口文件
+#wap->index
 RewriteCond %{REQUEST_URI} ^.?$
 RewriteRule ^$ /m.php [L]
 
 RewriteBase /
 
-#wap路由
+#wap
 RewriteRule ^m/?$  /m.php [L]
 RewriteRule ^m/(.+)?$ /m.php?controller=$1 [QSA]
 
 
 
-#pc路由
+#pc
 RewriteRule ^goods /index.php?controller=index&action=direct404 [L]
 RewriteRule ^cat- /index.php?controller=index&action=direct404 [L]
 RewriteRule ^jump /index.php?controller=index&action=direct404 [L]
