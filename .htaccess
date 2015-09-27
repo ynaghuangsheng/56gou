@@ -2,10 +2,10 @@ RewriteEngine on
 RewriteBase /
 
 
-RewriteRule ^goods /index.php?controller=index&action=direct404 [L]
-RewriteRule ^cat- /index.php?controller=index&action=direct404 [L]
-RewriteRule ^jump /index.php?controller=index&action=direct404 [L]
-RewriteRule ^start /index.php?controller=index&action=direct404 [L]
+RewriteRule ^goods /index.php?controller=index&action=direct404 [L] 
+RewriteRule ^cat- /index.php?controller=index&action=direct404 [L] 
+RewriteRule ^jump /index.php?controller=index&action=direct404 [L] 
+RewriteRule ^start /index.php?controller=index&action=direct404 [L] 
 
 RewriteRule ^sitemap.txt /index.php?controller=index&action=sitemap [L]
 
