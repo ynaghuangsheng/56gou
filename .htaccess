@@ -1,20 +1,34 @@
-RewriteEngine on
+
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} m.56gou.com
+#直接访问域名而没有参数的情况下直接重写到入口文件
+RewriteCond %{REQUEST_URI} ^.?$
+RewriteRule ^$ /m.php [L]
+
 RewriteBase /
 
+#wap路由
+RewriteRule ^m/?$  /m.php [L]
+RewriteRule ^m/(.+)?$ /m.php?controller=$1 [QSA]
 
-RewriteRule ^goods /index.php?controller=index&action=direct404 [L] 
-RewriteRule ^cat- /index.php?controller=index&action=direct404 [L] 
-RewriteRule ^jump /index.php?controller=index&action=direct404 [L] 
-RewriteRule ^start /index.php?controller=index&action=direct404 [L] 
+
+
+#pc路由
+RewriteRule ^goods /index.php?controller=index&action=direct404 [L]
+RewriteRule ^cat- /index.php?controller=index&action=direct404 [L]
+RewriteRule ^jump /index.php?controller=index&action=direct404 [L]
+RewriteRule ^start /index.php?controller=index&action=direct404 [L]
 
 RewriteRule ^sitemap.txt /index.php?controller=index&action=sitemap [L]
+
 
 RewriteRule ^discover/page/([0-9]+)/?$ /index.php?controller=index&page=$1 [L]
 
 RewriteRule ^(yifu|xiezi|baobao|peishi)/?$ /index.php?controller=$1 [L]
 RewriteRule ^(yifu|xiezi|baobao|peishi)/([0-9]+)/?$ /index.php?controller=$1&page=$2 [L]
-RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/?$ /index.php?controller=$1&tag=$2 [L]
-RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?controller=$1&tag=$2&page=$3 [L]
+RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/?$ /index.php?controller=$1&action=tag&tag=$2 [L]
+RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?controller=$1&action=tag&tag=$2&page=$3 [L]
 
 
 RewriteRule ^(guang)/?$ /index.php?controller=$1 [L]
@@ -27,3 +41,7 @@ RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?c
 
 RewriteRule ^(item)/([0-9]+)/?$ /index.php?controller=$1&id=$2 [L]
 RewriteRule ^(looe)/([0-9]+)/?$ /index.php?controller=$1&id=$2 [L]
+
+
+
+
