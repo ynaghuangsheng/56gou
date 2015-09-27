@@ -12,7 +12,7 @@ class IndexController extends Controller {
         //模板赋值
         $this->assign('index','index');//设置导航游标
         $this->assign('tag','index');//设置导航游标
-        $this->assign('ajax_url','/m/ajax?cid=2');//设置加载商品地址
+        $this->assign('ajax_url','/m/ajax');//设置加载商品地址
         $this->assign('list',$list);unset($list);
 		$this->display('index.htpl');
 
