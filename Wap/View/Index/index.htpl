@@ -20,10 +20,10 @@
 		<div class="nav_box">
 			<nav class="nav" id="nav">
 				<ul class="">
-					<li><a class="active" href="/"><em class="icon icon-jz"></em><span>首页</span><em class="line"></em></a></li>
-					<li><a href="/"><em class="icon icon-bz"></em><span>逛折扣</span><em class="line"></em></a></li>
-					<li><a href="/"><em class="icon icon-jk"></em><span>九块九</span><em class="line"></em></a></li>
-					<li class="_border"><a href="/"><em class="icon icon-yg"></em><span>每日推荐</span><em class="line"></em></a></li>
+					<li><a class=" <!--if ($tag=='index')--> active <!--endif--> " href="/"><em class="icon icon-jz"></em><span>首页</span><em class="line"></em></a></li>
+					<li><a class=" <!--if ($tag=='guang')--> active <!--endif-->" href="/m/index?action=guang"><em class="icon icon-bz"></em><span>逛折扣</span><em class="line"></em></a></li>
+					<li><a class=" <!--if ($tag=='ju')--> active <!--endif-->" href="/m/index?action=ju"><em class="icon icon-jk"></em><span>九块九</span><em class="line"></em></a></li>
+					<li class="_border" ><a class="<!--if ($tag=='tuijian')--> active <!--endif-->"  href="/m/index?action=tuijian"><em class="icon icon-yg"></em><span>每日推荐</span><em class="line"></em></a></li>
 				</ul>
 			</nav>
 		</div>
