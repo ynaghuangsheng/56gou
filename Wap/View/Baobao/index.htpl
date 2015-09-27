@@ -1,0 +1,31 @@
+{include file="header.htpl"}
+
+<!-- 主体 -->
+<div class="main">
+{include file="left.htpl"}
+	<div class="app">
+		<header id="head" class="head">
+		<div class="fixtop">
+			<span id="classify" class="classify"><a href="javascript:;" class="btn btn-left btn-type"></a></span>
+			<span id="t-index">包包</span>
+		</div>
+		</header>
+		<div class="next-nav">
+            <div class="box">
+                 <ul>
+                    <li><a href="/m/baobao?action=index" <!--if ($tag=='index')--> class="active" <!--endif-->>全部</a></li>
+                    <li><a href="/m/baobao?action=tag&tag={EF:urlencode("单肩包")}" <!--if ($tag=='单肩包')--> class="active" <!--endif-->>单肩包</a></li>
+                    <li><a href="/m/baobao?action=tag&tag={EF:urlencode("斜挎包")}" <!--if ($tag=='斜挎包')--> class="active" <!--endif-->>斜挎包</a></li>
+                    <li><a href="/m/baobao?action=tag&tag={EF:urlencode("双肩包")}" <!--if ($tag=='双肩包')--> class="active" <!--endif-->>双肩包</a></li>
+                    <li><a href="/m/baobao?action=tag&tag={EF:urlencode("钱包")}" <!--if ($tag=='钱包')--> class="active" <!--endif-->>钱包</a></li>
+                    <li><a href="/m/baobao?action=tag&tag={EF:urlencode("帆布包")}" <!--if ($tag=='帆布包')--> class="active" <!--endif-->>帆布包</a></li>
+                 </ul>
+           </div>
+       </div>
+		
+		{include file="goodslist.htpl"}
+		{include file="footer.htpl"}
+	</div> <!--app end -->
+</div> <!--main end -->
+</body>
+</html>

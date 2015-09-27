@@ -1,0 +1,33 @@
+{include file="header.htpl"}
+
+<!-- 主体 -->
+<div class="main">
+{include file="left.htpl"}
+	<div class="app">
+		<header id="head" class="head">
+		<div class="fixtop">
+			<span id="classify" class="classify"><a href="javascript:;" class="btn btn-left btn-type"></a></span>
+			<span id="t-index">配饰</span>
+		</div>
+		</header>
+		<div class="next-nav">
+            <div class="box">
+                 <ul>
+                    <li><a href="/m/peishi?action=index" <!--if ($tag=='index')--> class="active" <!--endif-->>全部</a></li>
+                    <li><a href="/m/peishi?action=tag&tag={EF:urlencode("项链")}" <!--if ($tag=='项链')--> class="active" <!--endif-->>项链</a></li>
+                    <li><a href="/m/peishi?action=tag&tag={EF:urlencode("手链")}" <!--if ($tag=='手链')--> class="active" <!--endif-->>手链</a></li>
+                    <li><a href="/m/peishi?action=tag&tag={EF:urlencode("戒指")}" <!--if ($tag=='戒指')--> class="active" <!--endif-->>戒指</a></li>
+                    <li><a href="/m/peishi?action=tag&tag={EF:urlencode("耳钉")}" <!--if ($tag=='耳钉')--> class="active" <!--endif-->>耳钉</a></li>
+                    <li><a href="/m/peishi?action=tag&tag={EF:urlencode("手表")}" <!--if ($tag=='手表')--> class="active" <!--endif-->>手表</a></li>
+                    <li><a href="/m/peishi?action=tag&tag={EF:urlencode("发箍")}" <!--if ($tag=='发箍')--> class="active" <!--endif-->>发箍</a></li>
+                    <li><a href="/m/peishi?action=tag&tag={EF:urlencode("发卡")}" <!--if ($tag=='发卡')--> class="active" <!--endif-->>发卡</a></li>
+                 </ul>
+           </div>
+       </div>
+		
+		{include file="goodslist.htpl"}
+		{include file="footer.htpl"}
+	</div> <!--app end -->
+</div> <!--main end -->
+</body>
+</html>

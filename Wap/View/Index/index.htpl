@@ -1,0 +1,36 @@
+{include file="header.htpl"}
+
+<!-- 主体 -->
+<div class="main">
+{include file="left.htpl"}
+	<div class="app">
+		<header id="head" class="head">
+		<div class="fixtop">
+			<span id="classify" class="classify"><a href="javascript:;" class="btn btn-left btn-type"></a></span>
+			<span id="t-index">我乐购</span>
+		</div>
+		</header>
+		<div class="area">
+	         <ul class="banner">
+	             <li><a title="" href="#"><img class="lazy"  src="http://s1.juancdn.com/bao/150925/1/2/5605262d840d1_750x290.jpg"></a></li>
+	             <li><a title="" href="#"><img class="lazy"  src="http://s1.juancdn.com/bao/150921/4/c/55ffdc13d53a6_750x290.jpg"></a></li>	
+	         </ul>
+	        <div class="adType"></div>
+        </div>
+		<div class="nav_box">
+			<nav class="nav" id="nav">
+				<ul class="">
+					<li><a class="active" href="/"><em class="icon icon-jz"></em><span>首页</span><em class="line"></em></a></li>
+					<li><a href="/"><em class="icon icon-bz"></em><span>逛折扣</span><em class="line"></em></a></li>
+					<li><a href="/"><em class="icon icon-jk"></em><span>9.9包邮</span><em class="line"></em></a></li>
+					<li class="_border"><a href="/"><em class="icon icon-yg"></em><span>最新</span><em class="line"></em></a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		{include file="goodslist.htpl"}
+		{include file="footer.htpl"}
+	</div> <!--app end -->
+</div> <!--main end -->
+</body>
+</html>
