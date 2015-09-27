@@ -144,7 +144,7 @@ $(function () {
                     $.each(json.data,function(index,array){ 
                          str = "<li class=\"clear\">";
                          str += "<div class=\"pro_img\">";
-                         str += "<img class=\"lazy\" ur=\""+ (mydate - array['starttime']*1000)+"\" src=\""+array['pic_url']+"_200x200.jpg\">";
+                         str += "<img class=\"lazy\" src=\""+array['pic_url']+"_200x200.jpg\">";
                          if((mydate - array['starttime']*1000)<(24*60*60*1000)){
                          str += "<span class=\"icon new\" >新品</span>";
                          }
