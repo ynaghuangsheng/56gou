@@ -7,7 +7,11 @@ $(function () {
 	    var w_h=$("#head").width();
 		//$("#index .search-area").css('width',w_h-100);
 		if( $(".next-nav ul li a.active").offset() != null ){
-            $(".next-nav .box").scrollLeft($(".next-nav ul li a.active").offset().left);
+			var a_width=$(".next-nav ul li a.active").width();
+			var a_left=$(".next-nav ul li a.active").offset().left;
+			if(a_left>(w_h/2)){
+            $(".next-nav .box").scrollLeft(a_left+a_width-(w_h/2));
+		    }
         }
 		//alert(0);
 	});
@@ -26,8 +30,8 @@ $(function () {
 			$(this).remove();
 			clearTimeout(timer);
 			timer=setTimeout(function(){
-			    $(".app-other").css('height',"auto")
-			    $(".main").css({"height":"auto","overflow":"visible"})
+			    $(".app-other").css('height',"auto");
+			    $(".main").css({"height":"auto","overflow":"visible"});
 			},400);
 		});
 	});
@@ -39,8 +43,8 @@ $(function () {
 		  }else{
 			$("#nav ul").removeClass("fixed");
 		  }
-	    })
-	}
+	    });
+	};
 	//二级导航浮动以及适配
 	var nav_t_show=function(){
 	    var box=$(".next-nav").width();
@@ -56,7 +60,7 @@ $(function () {
 			$(".next-nav .box").removeClass("fixed");
 		   }
 	     });
-	}
+	};
 	if($(".next-nav ul li").size()>0){
 		nav_t_show();
 	}
@@ -84,14 +88,14 @@ $(function () {
                 $('.adType').children().eq(i).addClass('current').siblings().removeClass('current');
             }
         });
-    }
+    };
     if($(".area").size()>0){
     	carousel_index();
 	}
     
 	//搜索
 	//alert($("#search_keyword").val());
-	searchFun=function(){
+	var searchFun=function(){
 		$("#search_keyword").on('focus',function(){
 		$(this).next().css("display","block");
 		});
@@ -107,7 +111,7 @@ $(function () {
 						$(this).css("display","none");
 						$search_txt.val("");
 		});
-	}
+	};
 	searchFun();
 	$(".closed").on("click",function(){
     	$(".go-app").hide();
@@ -173,13 +177,16 @@ $(function () {
            } 
         });
 	
-	}
+	};
 	
 	if($(".ajax_but_url").size()>0){
 		goods_list_show();
 	}
 	
 	
+     
+      
 });
+
 
  
