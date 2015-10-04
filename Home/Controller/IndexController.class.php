@@ -2,7 +2,7 @@
 class IndexController extends Controller {
 	 
 	public function index(){
-		
+		$this->is_mobile();
         $this->is404();
         
         //获取当前页码
@@ -46,6 +46,14 @@ class IndexController extends Controller {
 		$this->assign('index','index');//设置导航游标
 		   
 		$this->display('index.htpl');//模板输出
+	}
+	
+    public function is_mobile(){
+		  if(is_mobile()){
+		  	header('Location:'.C('WAP_MOBILE'));
+	        exit();
+		  	
+		  }
 	}
 	
 	public function is404(){

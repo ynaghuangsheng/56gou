@@ -39,7 +39,7 @@ class IndexController extends Controller {
    public function ju(){
 		
 		$list_rows=C('WAP_LIST_ROWS');//设置每次获取条数
-		$where='`zk_price`<10 and `zk_price`>9';
+		$where=' (`zk_price`<10 and `zk_price`>9) or (`zk_price`<20 and `zk_price`>19) or (`zk_price`<30 and `zk_price`>29)';
 		//查询产品数据
 		$list=$this->model->goodsSelect(1,$list_rows,$where);
 		$total_rows=$this->model->count;//产品总条数

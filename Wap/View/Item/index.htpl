@@ -1,0 +1,95 @@
+{include file="header.htpl"}
+<style>
+#item-good-back, #item-good-home {
+	position: absolute;
+	width: 10%;
+	top: 8px;
+	z-index: 2;
+}
+#item-good-back{
+	left: 8px;
+}
+#item-good-home {
+	right: 8px;
+}
+</style>
+<!-- 主体 -->
+<div class="main">
+{include file="left.htpl"}
+	<div class="app">
+        <header id="head" class="head">
+		<div class="fixtop">
+			<span id="classify" class="classify"><a href="javascript:;" class="btn btn-left btn-type"></a></span>
+            <span id="index"><i class="logo"><img src="/Public/wap/images/logo.png"></i></span>
+            <!--  
+            <span id="user"><a href="javascript:;" class="btn btn-right btn-sign"></a></span>
+			-->
+		</div>
+		</header>
+		<div id="item" style="margin-top:2px;">
+                <div class="item-good">
+                    <a href="javascript:window.history.go(-1)" id="item-good-back">
+                        <img src="/Public/wap/images/icon/back-arrow.png">
+                    </a>
+                    <a href="/" id="item-good-home">
+                        <img src="/Public/wap/images/icon/back-home.png">
+                    </a>
+
+                    <div class="img_show">
+                        <ul id="target" class="clear">
+                             <!--loop $pic $v-->
+                                <li>
+                                    <img src="{$v}_400x400.jpg" class="lazy no-change-scroll" >
+                                </li>
+                            <!--endloop-->
+                         </ul>
+                        <div class="icons" id="icons" style="display:none;">
+                            <span class="curr">1</span>
+                        </div>
+                        <div class="item_botton">
+                            <em>1</em>/<em>0</em>
+                        </div>
+                    </div>
+                    <div class="normal-list sale fl">
+                        <h2>{$item['title']}</h2>
+
+                        <div class="list-price buy fl">
+                            <span class="price-new"><i>&yen;</i>{$item['zk_price']}</span><i class="del f14 ml2">&yen;{$item['price']}</i>
+                        </div>
+                        <div class="item_zhe fl">
+
+                            <span class="sp1">{$item['rate']}折</span>
+                            <!-- <span class="sp2">包邮</span> -->
+                        </div>
+                         
+                        <span class="star_time clear" id="clock">
+                        <!--
+                           <img src="/Public/wap/images/icon/star_time.png"><span id="clock_span">剩余: 6天19小时10分19秒</span>
+                         -->
+                        </span>
+                        
+                    </div>
+                    <div class="collect fr" id="div_favorite" data-id="2784476">
+                        <a href="javascript:addFavorite()"><em></em><span>收藏</span></a>
+                    </div>
+		</div>
+		</div><!--item end -->
+        <div class="buy_btn clear">
+                <div class="buy_cart">
+                        <a class="go_tmall fr" isconvert="1" data-itemid="{$item['iid']}"  target="_blank">去淘宝购买</a>
+                        <a class="app_load normal fl" isconvert="1" data-sellerid="{$shop['taobao_uid']}"  target="_blank">
+                        <div class="box-button">
+                            <span class="icon"><img src="/Public/wap/images/icon/bag-icon.png"></span>
+                            <span class="txt">逛店铺</span>
+                        </div>
+                    </a>
+                </div>
+         </div>
+		 <script src="http://touch.code.baidu.com/touch-0.2.14.min.js"></script>
+		 <script src="/Public/wap/js/item.slider.js"></script>
+		{include file="goodslist.htpl"}
+		{include file="footer.htpl"}
+	</div> <!--app end -->
+</div> <!--main end -->
+</body>
+</html>

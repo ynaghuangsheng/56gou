@@ -8,6 +8,7 @@ class ItemController extends Controller {
 			header("location: 404.html");
 			exit();
 		}
+		$this->is_mobile($id);//跳转到wap
 		$item=$this->model->itemSelect($id);
 		if($item == false){
 		    header("location: 404.html");
@@ -36,5 +37,13 @@ class ItemController extends Controller {
 		unset($list);
 		
 		$this->display('index.htpl');
+	}
+	
+    public function is_mobile($id){
+		  if(is_mobile()){
+		  	header('Location:'.C('WAP_MOBILE').'/m/item?id='.$id);
+	        exit();
+		  	
+		  }
 	}
 }

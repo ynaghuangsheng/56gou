@@ -7,13 +7,17 @@
 		<header id="head" class="head">
 		<div class="fixtop">
 			<span id="classify" class="classify"><a href="javascript:;" class="btn btn-left btn-type"></a></span>
-			<span id="t-index">我乐购</span>
+            <span id="index"><i class="logo"><img src="/Public/wap/images/logo.png"></i></span>
+            <!--  
+            <span id="user"><a href="javascript:;" class="btn btn-right btn-sign"></a></span>
+			-->
 		</div>
 		</header>
 		<div class="area">
 	         <ul class="banner">
-	             <li><a title="" href="#"><img class="lazy"  src="http://s1.juancdn.com/bao/150925/1/2/5605262d840d1_750x290.jpg"></a></li>
-	             <li><a title="" href="#"><img class="lazy"  src="http://s1.juancdn.com/bao/150921/4/c/55ffdc13d53a6_750x290.jpg"></a></li>	
+	             <li><a title="" href="#"><img class="lazy"  src="/Public/ad/wap_001.jpg"></a></li>
+	             <li><a title="" href="#"><img class="lazy"  src="/Public/ad/wap_002.jpg"></a></li>
+	             <li><a title="" href="#"><img class="lazy"  src="/Public/ad/wap_003.jpg"></a></li>	
 	         </ul>
 	        <div class="adType"></div>
         </div>
@@ -22,7 +26,7 @@
 				<ul class="">
 					<li><a class=" <!--if ($tag=='index')--> active <!--endif--> " href="/"><em class="icon icon-jz"></em><span>首页</span><em class="line"></em></a></li>
 					<li><a class=" <!--if ($tag=='guang')--> active <!--endif-->" href="/m/index?action=guang"><em class="icon icon-bz"></em><span>逛折扣</span><em class="line"></em></a></li>
-					<li><a class=" <!--if ($tag=='ju')--> active <!--endif-->" href="/m/index?action=ju"><em class="icon icon-jk"></em><span>九块九</span><em class="line"></em></a></li>
+					<li><a class=" <!--if ($tag=='ju')--> active <!--endif-->" href="/m/index?action=ju"><em class="icon icon-jk"></em><span>特价</span><em class="line"></em></a></li>
 					<li class="_border" ><a class="<!--if ($tag=='tuijian')--> active <!--endif-->"  href="/m/index?action=tuijian"><em class="icon icon-yg"></em><span>每日推荐</span><em class="line"></em></a></li>
 				</ul>
 			</nav>

@@ -23,9 +23,9 @@ class AjaxController extends Controller {
 		}
 	    if(!is_null($ju)){
 			if($where!==''){
-				$where=' and `zk_price`<10 and `zk_price`>9';
+				$where=' and (`zk_price`<10 and `zk_price`>9) or (`zk_price`<20 and `zk_price`>19) or (`zk_price`<30 and `zk_price`>29)';
 			}else{
-				$where=' `zk_price`<10 and `zk_price`>9';
+				$where=' (`zk_price`<10 and `zk_price`>9) or (`zk_price`<20 and `zk_price`>19) or (`zk_price`<30 and `zk_price`>29)';
 			}
 		}
 	    if(!is_null($tuijian)){

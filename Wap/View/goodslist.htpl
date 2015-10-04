@@ -1,30 +1,39 @@
          <section  class="goods" id="goods">
          <ul class="goods-list clear" id="goods_block">
-             <!--loop $list $v-->
+             <!--loop $list $v--> 
              <li class="clear">
-                <div class="pro_img">
-                
-                      <img class="lazy" _src="_picurl_" src="{$v['pic_url']}_200x200.jpg">
-                             
-                        <!--  <em class="buy-over">抢光了</em>-->
-                        <!--if (checknew($v['starttime']))--> 
-                              <span class="icon new">新品</span>
-                        <!--endif-->
-                </div>
-                <div class="pro_info">
-                    <h3>{$v['title']}</h3>
-                    <div class="list-price buy ">
-                       <span class="price-new"><i>￥</i>{$v['zk_price']}</span><i class="del">￥{$v['price']}</i>                        
-                   </div>
-                   <div class="list-volume" ><span>{$v['volume']}人已买</span>   </div>
-               </div>
-               <a  class="gobut" isconvert="1" data-itemid="{$v['iid']}"  target="_blank" >立即去购买</a>
+
+                      <div class="pro_img">
+                           <a href="/m/item?id={$v['id']}" >
+                           <img src="{$v['pic_url']}_200x200.jpg" width="115"  alt="{$v['title']}" >
+                           </a>
+                           <!--if (checknew($v['starttime']))-->
+                              <i class="ico_new"></i>
+                           <!--endif-->
+                           
+                      </div>
+                      <div class="pro_info">
+                             <div class="tit_area">
+                                    <strong class="pad10">{$v['title']}</strong>         
+                             </div>
+                             <div class="attr">
+                                    <span class="price">¥{$v['zk_price']}</span>
+                                    <del>¥{$v['price']}</del>           
+                             </div>
+                             <div class="attr bottom">
+                                     <!-- <span class="line">包邮</span> -->
+                                     <span>{$v['volume']}人已购买</span>           
+                                     <a  class=" fr gobut" isconvert="1" data-itemid="{$v['iid']}"  target="_blank" >立即去购买</a>         
+                             </div>
+                      </div>
+                 
              </li>
              <!--endloop-->
          
          
          </ul>
         </section>
+        <!--if (isset($ajax_url))-->
         <div class="goods_list_load" >
               <span class="ajax_but_url" url="{$ajax_url}" >
                 <span class="goods_next"><img src="/Public/wap/images/goods_next.png"></span>
@@ -32,3 +41,6 @@
                 <span class="goods_loading" style="display: none;"><img  style="width:50px;" src="/Public/wap/images/goods_loading.gif"></span>
               </span>
         </div>
+        <!--endif-->
+
+ 

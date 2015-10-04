@@ -7,7 +7,7 @@ $(function () {
 	    var w_h=$("#head").width();
 		//$("#index .search-area").css('width',w_h-100);
 		if( $(".next-nav ul li a.active").offset() != null ){
-			var a_width=$(".next-nav ul li a.active").width();
+			var a_width=$(".next-nav ul li a.active").width()/2+15;
 			var a_left=$(".next-nav ul li a.active").offset().left;
 			if(a_left>(w_h/2)){
             $(".next-nav .box").scrollLeft(a_left+a_width-(w_h/2));
@@ -118,7 +118,6 @@ $(function () {
     	return false;
     });
 
-
 	
 	//产品列表加载更多
 	var goods_list_show=function(){
@@ -131,7 +130,7 @@ $(function () {
 	     var mydate = new Date();
 	     mydate=mydate.getTime();
          var winH = $(window).height(); //页面可视区域高度 
-         var i = 2; //设置当前页数 
+         var i = 2; //设置开始页码 
          $(window).scroll(function () { 
               var pageH = $(document).height(); 
               var scrollT = $(window).scrollTop(); //滚动条top 
@@ -145,23 +144,41 @@ $(function () {
                 $.getJSON(url,{page:i},function(json){ 
                  if(json.msg){ 
                 	var str = ""; 
-                    $.each(json.data,function(index,array){ 
+                    $.each(json.data,function(index,array){
+                    	
+                    	
+                    	
+                    	
+                    	
                          str = "<li class=\"clear\">";
                          str += "<div class=\"pro_img\">";
-                         str += "<img class=\"lazy\" src=\""+array['pic_url']+"_200x200.jpg\">";
+                         str += "<a href=\"/m/item?id="+array['id']+"\" >";
+                         str += "<img class=\"lazy\" src=\""+array['pic_url']+"_200x200.jpg\" width=\"115\" alt=\""+array['title']+"\" >";
+                         str += "</a>";
                          if((mydate - array['starttime']*1000)<(24*60*60*1000)){
-                         str += "<span class=\"icon new\" >新品</span>";
+                         str += "<i class=\"ico_new\" ></i>";
                          }
                          str += "</div>";
+                         
                          str += "<div class=\"pro_info\">";
-                         str += "<h3>"+array['title']+"</h3>";
-                         str += "<div class=\"list-price buy \">";
-                         str += "<span class=\"price-new\"><i>￥</i>"+array['zk_price']+"</span><i class=\"del\">￥"+array['price']+"</i>";                        
+                         
+                         str += "<div class=\"tit_area\">";
+                         str += "<strong class=\"pad10\">"+array['title']+"</strong>";
                          str += "</div>";
-                         str += "<div class=\"list-volume\" ><span>"+array['volume']+"人已买</span></div>";
+                         
+                         str += "<div class=\"attr\">";
+                         str += "<span class=\"price\">¥"+array['zk_price']+"</span>";
+                         str += "<del>¥"+array['price']+"</del>";  
                          str += "</div>";
-                         str += "<a  class=\"gobut\" isconvert=\"1\" data-itemid=\""+array['iid']+"\"  target=\"_blank\" >立即去购买</a>";
-                         str += "</li>";  
+                         
+                         str += "<div class=\"attr bottom\">";
+                         str += "<span>"+array['volume']+"人已购买</span>";
+                         str += "<a  class=\" fr gobut\" isconvert=\"1\" data-itemid=\""+array['iid']+"\"  target=\"_blank\" >立即去购买</a>";
+                         str += "</div>";
+                         
+                         str += "</div>";
+                         str += "</li>";
+                         
                         $("#goods_block").append(str); 
                     }); 
                     i++;

@@ -19,7 +19,7 @@
 	#foot{height: 120px;}
 	</style>
 	<div id="foot">
-	    <div class="foot-nav">
+	    <div class="foot-nav" class="foot">
 		<a href="http://www.56gou.com"><img src="/Public/wap/images/icon/phone.png">电脑版</a>
 		<a href="#" class="joa_load_app"><img src="/Public/wap/images/icon/client.png">客户端</a>
 		<a href="/" class="_border"><img src="/Public/wap/images/icon/home.png">返回首页</a>
