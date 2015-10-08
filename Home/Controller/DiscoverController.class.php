@@ -4,26 +4,10 @@ class DiscoverController extends Controller
 
     public function index()
     {
+        
+        $this->urlInDB('http://www.56gou.com/item/1/');
+        
         /*
-        $Goods = M('goods');
-
-        $sql = 'SELECT `id`  ';
-        $rs = $Goods->select();
-        
-        $urls = array();
-        
-        $count = 0;
-        
-        foreach ($rs as $item){
-            $url = 'http://www.56gou.com/item/'.$item['id'];
-            array_push($urls, array(
-                'url'=>$url,
-                'baidu_push'=>0
-            ));
-        }*/
-        
-        //print_r($urls);
-        
         $Seo = M('seo');
         
         do {
@@ -56,6 +40,7 @@ class DiscoverController extends Controller
             }
             
         }while (count($rs)==100);
+        */
         
 
         //print_r($rs);
@@ -93,11 +78,63 @@ class DiscoverController extends Controller
         exit();
     }
     
-    private function tobaidu($urls) {
+    private function UpdateUrlsDB() {
         
-        return 400;
+        $Goods = M('goods');
+
+        $rs = $Goods->select();
         
+        $urls = array();
+        
+        foreach ($rs as $item){
+            $url = 'http://www.56gou.com/item/'.$item['id'].'/';
+            array_push($urls, array(
+                'url'=>$url,
+                'baidu_push'=>0
+            ));
+        }
+        
+        $new_data = array();
+        
+        foreach ($urls as $data_row){
+            if (!$this->urlInDB($data_row['url'])){
+                array_push($new_data,$data_row);
+            }
+        }
+        
+        $Seo = M('seo');
+        if (!empty($new_data)){
+            
+            $add_rs = $Seo->data($new_data)->addAll();
+            
+            if ($add_rs){
+                echo '插入成功：'.$add_rs;
+            }else{
+                echo '插入数据失败！';
+            }
+            
+        }else{
+            echo '没有新连接';
+        }
+        
+        echo '<br>'.PHP_EOL;
+        
+    }
+    
+    private function urlInDB($url){
+        //echo $url; 
+        
+        $Seo = M('seo'); 
+        
+        $find_rs = $Seo->where('`url`=\'$url\'')->select();
+        print_r($find_rs); 
         /*
+        if ($find_rs) return true;
+        else return false;*/
+        
+    }
+    
+    private function tobaidu($urls) {
         
         $api = 'http://data.zz.baidu.com/urls?site=www.56gou.com&token=X6HOL7xoGJMH6ZPC';
         $ch = curl_init();
@@ -120,7 +157,7 @@ class DiscoverController extends Controller
         }else{
             return $obj_rs['remain'];
         }
-        */
+        
         
     }
 }
