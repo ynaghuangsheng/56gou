@@ -127,7 +127,8 @@ class DiscoverController extends Controller
         $Seo = M('seo'); 
         
         $find_rs = $Seo->where('`url`=\'$url\'')->select();
-        print_r($find_rs); 
+        print_r($find_rs);
+        
         /*
         if ($find_rs) return true;
         else return false;*/
