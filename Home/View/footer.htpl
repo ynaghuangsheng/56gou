@@ -6,7 +6,7 @@
 
 <div class="footer">
      <!--if (isset($link))--> 
-     <div class="f_link">
+     <div class="f_link" style="display:none;">
             友情链接：
             <!--loop $link $val-->
              <a href="{$val['web_url']}">{$val['web_name']}</a>
