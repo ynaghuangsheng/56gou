@@ -3,7 +3,14 @@
 <head>
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
 <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+
+<?php if ($_SERVER[REQUEST_URI] == '/') {
+ ?>
+<title>56时尚 </title>
+<?php }else{  ?>
 <title>{$head['title']}</title>
+<?php } ?>
+
 <meta name="keywords" content="{$head['key']},淘宝,淘宝购物,淘宝打折,淘宝精选 ">
 <meta name="description" content="{$head['des']}">
 <link rel="icon" href="/Public/home/images/favicon.ico">
@@ -21,6 +28,18 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
+<?php if ($_SERVER[REQUEST_URI] == '/') { ?>
+<script type="text/javascript">
+$("div.price").css('display:none','none');
+</script>
+
+<style type="text/css">
+div.txt{ display:none; }
+.price { display:none; }
+</style>
+<?php }  ?>
+
 </head>
 <body>
 
@@ -30,12 +49,12 @@ var _hmt = _hmt || [];
     <div class="nav">
         <ul>
            <li><a href="/" class="<!--if ($index=='index')--> select <!--endif-->">首页</a></li>
-           <li>
-             <a href="/guang/" class=" <!--if ($index=='guang')--> select <!--endif--> ">逛折扣</a><i></i>
-             <a href="/yifu/" class="small <!--if ($index=='yifu')--> select <!--endif--> ">衣服</a><i>|</i>
-             <a href="/xiezi/" class="small <!--if ($index=='xiezi')--> select <!--endif--> ">鞋子</a><i>|</i>
-             <a href="/baobao/" class="small <!--if ($index=='baobao')--> select <!--endif--> ">包包</a><i>|</i>
-             <a href="/peishi/" class="small <!--if ($index=='peishi')--> select <!--endif--> ">配饰</a>
+           <li> 
+             <a href="/" class=" <!--if ($index=='guang')--> select <!--endif--> ">逛</a><i></i> 
+             <a href="/" class="small <!--if ($index=='yifu')--> select <!--endif--> ">衣服</a><i>|</i>
+             <a href="/" class="small <!--if ($index=='xiezi')--> select <!--endif--> ">鞋子</a><i>|</i>
+             <a href="/" class="small <!--if ($index=='baobao')--> select <!--endif--> ">包包</a><i>|</i>
+             <a href="/" class="small <!--if ($index=='peishi')--> select <!--endif--> ">配饰</a>
 
            </li>
         </ul>
