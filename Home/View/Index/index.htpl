@@ -194,8 +194,8 @@
                        <span class="discount">(<em>{$v['rate']}</em>折)</span>
                    </div>
                    <div class="bg"></div> 
-                   <div class="hover">
-                         <！--div class="txt"><a href="/item/{$v['id']}/"><span>{$v['title']}</span></a></div-->
+                   <div class="hover"> 
+                         <div class="txt"><a href="/item/{$v['id']}/"><span>{$v['title']}</span></a></div>
                          <div class="bg"></div>
                    </div>
                </li>
