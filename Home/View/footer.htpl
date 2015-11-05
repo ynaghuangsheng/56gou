@@ -1,15 +1,13 @@
 <div class="footerBox">
 
-<?php if ($_SERVER[REQUEST_URI] != '/') { ?>
-<div><script type="text/javascript">var cpro_id = "u2328925";</script><script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></div
-<?php } ?>
+<div><script type="text/javascript">var cpro_id = "u2328925";</script><script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></div>
 
 <div class="footer">
      <!--if (isset($link))--> 
-     <div class="f_link" style="display:none;">
+     <div class="f_link">
             友情链接：
             <!--loop $link $val-->
-             <a href="{$val['web_url']}">{$val['web_name']}</a>
+             <a href="{$val['web_url']}" target="_blank">{$val['web_name']}</a>
             <!--endloop-->
      </div>
      <!--endif-->

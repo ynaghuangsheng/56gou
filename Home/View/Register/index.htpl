@@ -1,0 +1,303 @@
+{include file="uheader.htpl"}
+<script type="text/javascript" src="/Public/home/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/Public/home/js/jquery.emailmatch.js"></script>
+<style>
+
+.content{width:400px;padding:10px 60px;margin:auto;text-align:left;background-color:#fff;
+    border: 1px solid #dedede;
+    -moz-border-radius: 10px;      /* Gecko browsers */
+    -webkit-border-radius: 10px;   /* Webkit browsers */
+    border-radius:10px;            /* W3C syntax */}
+.content h3 { font-size:22px; font-family:"微软雅黑"; font-weight:normal; color:#666; }
+.content ul { padding-top:5px; }
+.content li{clear:both;margin-bottom:3px;position:relative; height:auto;line-height:0px; }
+.content li .user-box {height:30px;width:200px;position:relative; border:1px solid #c6c6c6;}
+.content li .input-active { border:1px solid #a4cd6b; box-shadow: 0px 0px 2px rgba(164, 205, 147, .8); }
+.content li .spr-box {width:100px;}
+.content li .spr-box img{position:absolute;right:-105px;bottom:0px;width:80px;height:28px;border:1px solid #c6c6c6;}
+.content li .user-box span{float:left;width:30px;height:30px;border-right:1px solid #c6c6c6;}
+.content li .user-box span i { width:13px; height:12px; margin:8px auto 0; background:url(/Public/home/images/login.png) no-repeat; display:block; }
+.content li .user-box .user-ico { background-position:0 0; }
+.content li .user-box .pass-ico { background-position:-19px 0; }
+.content li .user-box .spr-ico { background-position:-36px 0; }
+.content li .user-box .email-ico { background-position:-53px 0; }
+.content li .user-box .qq-ico { background-position:-71px 0; }
+.content li .user-box input{float:left;padding: 8px 0 8px 10px;width:159px;height:14px;line-height:14px;border:none;font-size:100%;}
+.content li .user-box .spr_input{width:59px;}
+
+.content li .error-box {position:relative;line-height:25px;padding-left:35px;height:auto; color:#666;}
+.content li .error-box .field_notice{display:none;}
+.content li .error-box strong {position:absolute;top:-25px;left:205px; width:16px; height:16px;line-height:0px; background:url(/Public/home/images/login.png) no-repeat; display:inline-block; vertical-align:-3px; margin-right:3px; }
+.content li .spr-error-box strong {left:105px;}
+.content li .error-box .error { background-position:0 -19px; }
+.content li .error-box .warn{ background-position:-20px -19px;}
+.content li .error-box .ok { background-position:-40px -19px; }
+.content li .error-box .check{background-position:40px 19px;}
+
+.shengming{ padding-top:10px}
+.shengming p{ text-indent:24px; line-height:26px; margin-bottom:5px}
+
+#emailMatch_list .mailListBox{border:1px solid #e0e0e0;background-color:#fff;position:absolute;z-index:9999;display:none;}
+#emailMatch_list .mailListBox ul{padding:0;margin:0}
+#emailMatch_list .mailListBox li{zoom:1;overflow:hidden;padding:0 5px;margin:0;border-top:1px solid #e0e0e0;list-style:none;font-size:12px;font-family:Arial,Helvetica,sans-serif;line-height:26px;height:26px;cursor:pointer;color:#999;}
+#emailMatch_list .mailListBox li.hover{background-color:#e0e0e0;color:#035cc1}
+#emailMatch_list .mailListBox li.current{background-color:#c1d5eb;color:#035cc1}
+
+</style>
+<div style="text-align:center;">
+<div class="content">
+     <p class="title"><h3>新用户注册</h3></p>
+     <form id="register_form" name="form" method="post" action="/#######">
+     <ul>
+         <li>
+             <div class="user-box">
+                  <span><i class="email-ico"></i></span>
+                  <input name="email" type="text" id="email" value=""  autocomplete="off"/>
+                  <p id="emailMatch_list"></p>
+             </div>
+             <div class="error-box" warn="请填写常用邮箱"></div>
+         </li>
+         <li>
+             <div class="user-box">
+                  <span><i class="pass-ico"></i></span>
+                  <input name="password" type="password" id="password"  value=""/>
+             </div>
+             <div class="error-box" warn="密码6～16位，区分大小写"></div>
+         </li>
+         <li>
+             <div class="user-box">
+                  <span><i class="pass-ico"></i></span>
+                  <input name="confirm_password" type="password" id="confirm_password"  value=""/>
+             </div>
+             <div class="error-box" warn="密码6～16位，区分大小写"></div>
+         </li>
+         <li>
+             <div class="user-box">
+                  <span><i class="user-ico"></i></span>
+                  <input name="username" type="text" id="username"  value="" />
+             </div>
+             <div class="error-box" warn="用户名长度3-15位字母或数字"></div>
+         </li>
+         <li>
+             <div class="user-box">
+                  <span><i class="qq-ico"></i></span>
+                  <input name="qq" type="text" id="qq"  onkeyup="value=value.replace(/[^\d]/g,'')" value="" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" onblur="var qq=$(this).val();if(qq=='') return false;qq=qq+'@qq.com';if($('#email').val()==''){$('#email').val(qq)}" />
+             </div>
+             <div class="error-box" warn="常用的QQ,方便我们联系"></div>
+         </li>
+         <li>
+             <div class="user-box spr-box">
+                  <span><i class="spr-ico"></i></span>
+                  <input name="captcha" type="text" id="captcha" size="6" maxlength="4"  class="spr_input"/>
+                  <img  title="点击更换" style="cursor:pointer;" onClick="this.src='/index.php?controller=ajax&a='+Math.random()" src="/index.php?controller=ajax"  class="captcha_img" alt="验证码" >
+             </div>
+             <div class="error-box spr-error-box" warn="填写右边图片的数字"></div>
+         </li>
+         
+         <li>
+            <div><input type="submit" name="sub" class="sub" value="完成注册" /></div>
+         </li>
+         
+         <li>
+             <div style="margin:15px 0;height:35px;">
+                  <input name="agree" id="agree" type="checkbox" value="checkbox" checked="checked" /><span> 我已经阅读过并同意声明</span>
+             </div>
+         </li>
+         
+         
+     
+     
+     
+     </ul>
+     
+     
+     
+     
+     
+     </form>
+      <div style="clear:both"></div>
+      <div class="shengming"><fieldset style="padding:0px 10px 10px 10px">
+      <legend>网站声明</legend>
+      <div style="height:10px"></div>
+      <p>1、所有提供的所有商品均通过淘宝网和其他商城（如凡客，一号店）进行交易，本网站只提供相关的链接和推广，所以不承担商品的质量及售后服务。</p>
+      <p>2、本站不涉及网络支付等问题，所有商品购买最终都通过淘宝网及各大商城，故不存在账号泄露等问题，请买家放心。</p>
+      <p>3、多多返利在线演示站祝大家购物愉快！</p>
+      </fieldset>
+      </div>
+      </div>
+      
+
+
+
+
+
+</div>
+</div>
+<script>
+function emailMatchOver(){
+	if($('#username').val()==''){
+		var email=$('#email').val()
+		var a=email.split('@');
+		$('#username').val(a[0]);
+	}
+}
+
+$(function(){
+	//获取焦点事件
+	$(':input').focus(function(){
+    	//高亮边框
+    	$('.input-active').removeClass('input-active');
+    	$(this).parents('.user-box').addClass('input-active');
+    	var inputs=$(this).parent('div').next('div');
+    	var warn=inputs.attr('warn');
+    	inputs.html("<span><strong class=\"warn\"></strong>"+warn+"</span>");
+	});
+	//默认获取焦点
+	$('input[name=email]').focus();
+
+	$("#email").emailMatch({wrapLayer:"#emailMatch_list"});
+	$("#register_form").validate({
+		//focusInvalid: false, //当为false时，验证无效时，没有焦点响应  
+		onfocusout : function(element) {
+               $(element).valid();
+        },
+        onkeyup: false,   
+		errorPlacement: function(error, element){
+        	   //element.html('<img src="#">')
+		       var error_td = element.parent('div').next('div');
+               //error_td.find('.field_notice').hide();
+               error_td.html(error);
+		      //td.find('input').css('border','red 1px dotted');
+        },
+        success: function(label){
+            //label.addClass('validate_right').html('<strong class=\"ok\">111111111</strong>');
+            label.html('<strong class=\"ok\"></strong>');
+        },
+		rules: { 
+		     username : {
+                required : true,
+                userName: true,
+                byteRange: [3,15,'utf-8'],
+                remote   : {
+                    url :'index.php?controller=ajax&action=check_username',
+                    type:'post',
+                    data:{
+                        username : function(){
+                            return $('#username').val();
+                        }
+                    },
+                    beforeSend:function(){
+                    	//alert('1');
+                        var _checking = $('#username').parent('div').next('div');
+                        _checking.html('<strong class=\"check\"><img src=\"/Public/home/images/checking.gif\"></strong>');
+                    },
+                    complete :function(){
+                    	var _checking = $('#username').parent('div').next('div');
+                        _checking.find('.check').remove();
+                    }
+                }
+	         },
+		     email: { 
+		          required: true, 
+		          email: true,
+		          remote   : {
+	                    url :'index.php?controller=ajax&action=check_email',
+	                    type:'post',
+	                    data:{
+	                        email : function(){
+	                            return $('#email').val();
+	                        }
+	                    },
+	                    beforeSend:function(){
+	                    	var _checking = $('#email').parent('div').next('div');
+	                        _checking.html('<strong class=\"check\"><img src=\"/Public/home/images/checking.gif\"></strong>');
+	                    },
+	                    complete :function(){
+	                    	var _checking = $('#email').parent('div').next('div');
+	                    	_checking.find('.check').remove();
+	                    }
+	             }
+		     }, 
+		     password: { 
+		         required: true, 
+		         minlength: 5 
+		     }, 
+		     confirm_password: { 
+		         required: true, 
+		         minlength: 5, 
+		         equalTo: "#password" 
+		     },
+		     qq : {
+	              required : true,
+	              range:[1000,999999999999]
+	         },
+	         captcha : {
+	                required : true,
+	                rangelength:[4,4],
+	                remote   : {
+	                    url :'index.php?controller=ajax&action=check_captcha',
+	                    type:'post',
+	                    data:{
+	                        captcha : function(){
+	                            return $('#captcha').val();
+	                        }
+	                    },
+	                    beforeSend:function(){
+	                    	var _checking = $('#captcha').parent('div').next('div');
+	                        _checking.html('<strong class=\"check\"><img src=\"/Public/home/images/checking.gif\"></strong>');
+	                    },
+	                    complete :function(){
+	                    	var _checking = $('#captcha').parent('div').next('div');
+	                    	_checking.find('.check').remove();
+	                    }
+	                }
+	         },
+	         agree : {
+	                required : true
+	         }
+		}, 
+		messages: { 
+		     username : {
+	                required : "<strong class=\"error\"></strong>您必须提供一个用户名",
+	                userName :"<strong class=\"error\"></strong>只能包含(中文\英文\数字\下画线)",
+	                byteRange: "<strong class=\"error\"></strong>用户名必须在3-15个字符之间",
+					remote   : "<strong class=\"error\"></strong>用户名已存在"
+	         },
+		     email: { 
+		         required: "<strong class=\"error\"></strong>请输入Email地址", 
+		         email: "<strong class=\"error\"></strong>请输入正确的email地址",
+		         remote   : '<strong class="error"></strong>邮箱已存在'
+		     }, 
+		     password: { 
+		         required: "<strong class=\"error\"></strong>请输入密码", 
+		         minlength: jQuery.format("<strong class=\"error\"></strong>密码不能小于{0}个字符") 
+		     }, 
+		     confirm_password: { 
+		         required: "<strong class=\"error\"></strong>请输入确认密码", 
+		         minlength: "<strong class=\"error\"></strong>确认密码不能小于5个字符", 
+		         equalTo: "<strong class=\"error\"></strong>两次输入密码不一致不一致" 
+		     },
+		     qq : {
+	             required : "<strong class=\"error\"></strong>您必须提供您的QQ号码",
+	             range:"<strong class=\"error\"></strong>QQ号码位数错误"
+	         },
+	         captcha : {
+	                required : "<strong class=\"error\"></strong>请输入右侧图片中的文字",
+					rangelength    : "<strong class=\"error\"></strong>位数错误",
+				    remote   : "<strong class=\"error\"></strong>填写错误"
+	         },
+	         agree : {
+	             required : "<strong class=\"error\"></strong>您必须阅读并同意该协议"
+	         }
+		},
+		submitHandler: function(form) {   
+			form.submit();
+        } 
+	}); 
+			
+
+});
+</script>
+
+
+{include file="ufooter.htpl"}

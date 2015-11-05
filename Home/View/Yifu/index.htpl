@@ -8,7 +8,7 @@
                      <li><span><a href="/yifu/{EF:urlencode("连衣裙")}/">连衣裙</a><em></em></span></li>
                      <li><span><a href="/yifu/{EF:urlencode("开衫")}/">开衫</a></span></li>
                      <li><span><a href="/yifu/{EF:urlencode("衬衫")}/">衬衫</a><em></em></span></li>
-                     <li><span><a href="/yifu/{EF:urlencode("t恤")}/">t恤</a><em></em></span></li>
+                     <li><span><a href="/yifu/{EF:urlencode("T恤")}/">T恤</a><em></em></span></li>
                      <li><span><a href="/yifu/{EF:urlencode("短裙")}/">短裙</a><em></em></span></li>
                  </ul>
                  <ul>

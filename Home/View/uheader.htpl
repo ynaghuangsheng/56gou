@@ -24,25 +24,8 @@ var _hmt = _hmt || [];
  
 </head>
 <body>
-<div class="headerBox">
-<div class="header">
-    <div class="logo"></div>
-    <div class="nav">
-        <ul>
-           <li><a href="/" class="<!--if ($index=='index')--> select <!--endif-->">首页</a></li>
-           <li>
-             <a href="/guang/" class=" <!--if ($index=='guang')--> select <!--endif--> ">逛折扣</a><i></i>
-             <a href="/yifu/" class="small <!--if ($index=='yifu')--> select <!--endif--> ">衣服</a><i>|</i>
-             <a href="/xiezi/" class="small <!--if ($index=='xiezi')--> select <!--endif--> ">鞋子</a><i>|</i>
-             <a href="/baobao/" class="small <!--if ($index=='baobao')--> select <!--endif--> ">包包</a><i>|</i>
-             <a href="/peishi/" class="small <!--if ($index=='peishi')--> select <!--endif--> ">配饰</a>
+<div style="text-align:center;">
+     <div style="width:400px;height:80px;margin:0 auto;">
+     </div>
 
-           </li>
-        </ul>
-    </div>
-    <div class="clear"></div>
-    <div class="login"><a href="#">登陆</a> | <a href="#">注册</a></div>
-    
 </div>
-</div>
-<div class="clear"></div>
