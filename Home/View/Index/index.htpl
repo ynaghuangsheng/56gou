@@ -208,7 +208,17 @@
     </div>
 </div>
 
-
+<div class="bodyBox"><script type="text/javascript">
+        document.write('<a style="display:none!important" id="tanx-a-mm_14743860_9800659_41972928"></a>');
+        tanx_s = document.createElement("script");
+        tanx_s.type = "text/javascript";
+        tanx_s.charset = "gbk";
+        tanx_s.id = "tanx-s-mm_14743860_9800659_41972928";
+        tanx_s.async = true;
+        tanx_s.src = "http://p.tanx.com/ex?i=mm_14743860_9800659_41972928";
+        tanx_h = document.getElementsByTagName("head")[0];
+        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script></div>
 
 <div class="bodyBox" id="goodsbox">
     <!--  <div class="tjh"><h5>最新折扣商品</h5></div> -->
