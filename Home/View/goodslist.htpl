@@ -6,7 +6,7 @@
              <!--loop $list $v-->
              <li id="goods">
                 <div class="pic">
-                     <!--a href="/item/{$v['id']}/"--><a href="/">
+                     <a href="/item/{$v['id']}/">
                      <img class="lazy" original="{$v['pic_url']}_250x250.jpg">
                      <noscript><img src="/Public/tbpic/{$v['iid']}_250x250.jpg" alt="{$v['title']}" /></noscript>
                      </a>
@@ -14,8 +14,8 @@
                      <span class="new-icon">新品</span>
                      <!--endif-->
                 </div>
-                <h3><a href="/" target="_blank">{$v['title']}</a><span style="display:none;" class="trade">已售：{$v['volume']} 件</span></h3>
-                <div class="price"  style="display:none;"> 
+                <h3><a href="/item/{$v['id']}/" target="_blank">{$v['title']}</a><span class="trade">已售：{$v['volume']} 件</span></h3>
+                <div class="price"> 
                    {F:$my_arr = explode('.',$v['zk_price']);list($dis_price1,$dis_price2) = $my_arr;}
                    <span class="current"><em class="unit">￥</em><em class="big">{$dis_price1}</em><em class="tiny">.{$dis_price2}</em></span>
                    <span class="other">

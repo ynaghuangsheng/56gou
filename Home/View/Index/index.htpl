@@ -1,6 +1,6 @@
 {include file="header.htpl"}
 
-<div class="bannerBox" style="display:none;">
+<div class="bannerBox">
 <div class="bannerbody">
     <div class="top_var">
           <ul>
@@ -70,7 +70,7 @@
         </dl>
     </div>
 
-</div> 
+</div>
 </div><!-- bannerBox end -->
 <script type="text/javascript">carousel_index();</script>
 
@@ -83,7 +83,7 @@
                <!--loop $yifuData $v-->
                <li>
                    <div class="img">
-                       <!-- a href="/item/{$v['id']}/"--><a href="/">
+                       <a href="/item/{$v['id']}/">
                        <img class="lazy" original="{$v['pic_url']}_200x200.jpg">
                        <noscript><img src="/Public/tbpic/{$v['iid']}_200x200.jpg" alt="{$v['title']}" /></noscript>
                        </a>
@@ -116,7 +116,7 @@
                <!--loop $xieziData $v-->
                <li>
                    <div class="img">
-                       <!-- a href="/item/{$v['id']}/"--><a href="/">
+                       <a href="/item/{$v['id']}/">
                        <img class="lazy" original="{$v['pic_url']}_200x200.jpg">
                        <noscript><img src="/Public/tbpic/{$v['iid']}_200x200.jpg" alt="{$v['title']}" /></noscript>
                        </a>
@@ -149,7 +149,7 @@
                <!--loop $baobaoData $v-->
                <li>
                    <div class="img">
-                       <!-- a href="/item/{$v['id']}/"--><a href="/">
+                       <a href="/item/{$v['id']}/">
                        <img class="lazy" original="{$v['pic_url']}_200x200.jpg">
                        <noscript><img src="/Public/tbpic/{$v['iid']}_200x200.jpg" alt="{$v['title']}" /></noscript>
                        </a>
@@ -182,7 +182,7 @@
                <!--loop $peishiData $v-->
                <li>
                    <div class="img">
-                       <!-- a href="/item/{$v['id']}/"--><a href="/">
+                       <a href="/item/{$v['id']}/">
                        <img class="lazy" original="{$v['pic_url']}_200x200.jpg">
                        <noscript><img src="/Public/tbpic/{$v['iid']}_200x200.jpg" alt="{$v['title']}" /></noscript>
                        </a>
@@ -194,7 +194,7 @@
                        <span class="discount">(<em>{$v['rate']}</em>折)</span>
                    </div>
                    <div class="bg"></div> 
-                   <div class="hover"> 
+                   <div class="hover">
                          <div class="txt"><a href="/item/{$v['id']}/"><span>{$v['title']}</span></a></div>
                          <div class="bg"></div>
                    </div>
@@ -215,6 +215,6 @@
     {include file="goodslist.htpl"}
 
 </div>
- 
-<!-- div class="pageBox"><span class="pageBox_nav">{$page}</span></div-->
+
+<div class="pageBox"><span class="pageBox_nav">{$page}</span></div>
 {include file="footer.htpl"}
