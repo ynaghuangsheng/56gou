@@ -30,6 +30,9 @@ class GuangController extends Controller {
            $url='/guang/yifu/';
            $where='`cid`=1 ';
            $tag=isset($_REQUEST['tag'])?urldecode($_REQUEST['tag']):false;
+           
+           $tag = htmlentities($tag); // 防止跨站脚本攻击（XSS）
+           
            if($tag){
            	$url.=urlencode($tag).'/';
            	$where.='and `title` like \'%'.$tag.'%\'';
@@ -64,6 +67,7 @@ class GuangController extends Controller {
            $url='/guang/xiezi/';
            $where='`cid`=2 ';
            $tag=isset($_REQUEST['tag'])?urldecode($_REQUEST['tag']):false;
+           $tag = htmlentities($tag); // 防止跨站脚本攻击（XSS）
            if($tag){
            	$url.=urlencode($tag).'/';
            	$where.='and `title` like \'%'.$tag.'%\'';
@@ -98,6 +102,7 @@ class GuangController extends Controller {
            $url='/guang/baobao/';
            $where='`cid`=3 ';
            $tag=isset($_REQUEST['tag'])?urldecode($_REQUEST['tag']):false;
+           $tag = htmlentities($tag); // 防止跨站脚本攻击（XSS）
            if($tag){
            	$url.=urlencode($tag).'/';
            	$where.='and `title` like \'%'.$tag.'%\'';
@@ -132,6 +137,7 @@ class GuangController extends Controller {
            $url='/guang/peishi/';
            $where='`cid`=4 ';
            $tag=isset($_REQUEST['tag'])?urldecode($_REQUEST['tag']):false;
+           $tag = htmlentities($tag); // 防止跨站脚本攻击（XSS）
            if($tag){
            	$url.=urlencode($tag).'/';
            	$where.='and `title` like \'%'.$tag.'%\'';

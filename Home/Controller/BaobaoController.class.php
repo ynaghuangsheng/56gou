@@ -40,6 +40,7 @@ class BaobaoController extends Controller {
         $url='/baobao/'.urlencode($tag).'/';//设置默认Url
 	    $where="`cid`=3 and `title` like '%{$tag}%'";//设置查询条件
 	    //设置头部信息
+	    $tag = htmlentities($tag); // 防止跨站脚本攻击（XSS）
 	    $head['title']="{$tag}:休闲时尚{$tag}品牌,{$tag}搭配图片|{$tag}款式,价格,折扣,优惠-我乐购";
 		$head['key']="{$tag},{$tag}品牌,{$tag}款式,{$tag}图片,{$tag}搭配,{$tag}折扣,{$tag}优惠";
 		$head['des']="{$tag}专栏精选精美设计的{$tag}款式及{$tag}品牌,教你如果如何搭配{$tag},并提供新款{$tag}资讯,和最新的{$tag}价格折扣优惠信息.-我乐购";
