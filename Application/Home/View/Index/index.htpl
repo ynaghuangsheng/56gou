@@ -55,9 +55,9 @@
     </div>
     <div class="top_bar">
         <ul id="banner_list" class="banner">
-        <li style="display: none;"><a style="background:url(http://img.coubei.com/upload/15/08/14/1439518801.jpg) no-repeat center center;" target="_blank" href="#" class="pic"></a></li>
-        <li style="display: none;"><a style="background:url(https://img.alicdn.com/imgextra/i2/1074509866/TB2GhRYdVXXXXcKXXXXXXXXXXXX_!!1074509866-0-jianzhan.jpg) no-repeat center center;" target="_blank" href="#" class="pic"></a></li>
-        <li style="display: none;"><a style="background:url(http://img02.taobaocdn.com/imgextra/i2/1074509866/TB2tzWNdXXXXXcYXXXXXXXXXXXX_!!1074509866-0-jianzhan.jpghttp://img.alicdn.com/imgextra/i1/1074509866/TB2p6FXdFXXXXXOXXXXXXXXXXXX_!!1074509866-0-jianzhan.jpg) no-repeat center center;" target="_blank" href="#" class="pic"></a></li>
+        <li style="display: none;"><a style="background:url(/Public/ad/index_ad_1.png) no-repeat center center;" target="_blank" href="http://www.56gou.com/item/6214/" class="pic"></a></li>
+        <li style="display: none;"><a style="background:url(/Public/ad/index_ad_1.png) no-repeat center center;" target="_blank" href="http://www.56gou.com/item/6214/" class="pic"></a></li>
+        <li style="display: none;"><a style="background:url(/Public/ad/index_ad_1.png) no-repeat center center;" target="_blank" href="http://www.56gou.com/item/6214/" class="pic"></a></li>
         
         </ul>
         <div class="round"><div class="adType"></div></div>
@@ -208,7 +208,17 @@
     </div>
 </div>
 
-
+<div class="bodyBox"><script type="text/javascript">
+        document.write('<a style="display:none!important" id="tanx-a-mm_14743860_9800659_41972928"></a>');
+        tanx_s = document.createElement("script");
+        tanx_s.type = "text/javascript";
+        tanx_s.charset = "gbk";
+        tanx_s.id = "tanx-s-mm_14743860_9800659_41972928";
+        tanx_s.async = true;
+        tanx_s.src = "http://p.tanx.com/ex?i=mm_14743860_9800659_41972928";
+        tanx_h = document.getElementsByTagName("head")[0];
+        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script></div>
 
 <div class="bodyBox" id="goodsbox">
     <!--  <div class="tjh"><h5>最新折扣商品</h5></div> -->
