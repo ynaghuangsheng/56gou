@@ -1,0 +1,2 @@
+<?php
+require("TopSdk.php");

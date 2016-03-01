@@ -1,0 +1,10 @@
+<div class="nav_box">
+           <nav class="nav" id="nav">
+				<ul class="">
+					<li><a class=" {if ($index['tag']=='index')} active {/if} " href="/"><em class="icon icon-jz"></em><span>首页</span><em class="line"></em></a></li>
+					<li><a class=" {if ($index['tag']=='guang')} active {/if}" href="/m/index?a=guang"><em class="icon icon-bz"></em><span>逛折扣</span><em class="line"></em></a></li>
+					<li><a class=" {if ($index['tag']=='ju')} active {/if}" href="/m/index?a=ju"><em class="icon icon-jk"></em><span>特价</span><em class="line"></em></a></li>
+					<li class="_border" ><a class="{if ($index['tag']=='tuijian')} active {/if}"  href="/m/index?a=tuijian"><em class="icon icon-yg"></em><span>每日推荐</span><em class="line"></em></a></li>
+				</ul>
+			</nav>
+</div>

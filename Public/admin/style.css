@@ -342,6 +342,10 @@ select{ vertical-align:middle;background:none repeat scroll 0 0 #F9F9F9;border-c
 #pages a.page_prev,#pages a.page_first,#pages a.page_last,#pages a.page_next { background:#4d81bb  0 5px; width:50px;}
 #pages a:hover { text-decoration:none;color:#FF6701 }
 
+#pages input{width:30px;height:14px;background-color:#e9e7e7;color:#333;border:1px solid #c4c4c4;border-radius:2px;text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);padding:4px 4px;display:inline-block;
+cursor:pointer;text-decoration:none;overflow:visible;text-align:center;margin-right:10px;float:right;}
+#pages input:hover{background-color:#ffe1ce;}
+
 /*分页导航S*/
 .paging {float:left;height: auto; overflow: hidden;text-align: left;}
 .paging_nav {margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:auto;display: inline-block;}

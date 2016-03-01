@@ -1,0 +1,29 @@
+<style>
+.app-other {width: 60%;}
+</style>
+<div class="app-other">
+    <ul>
+    <li class="search">
+        <div id="search-box">
+            <form id="search-form" action="#" method="get">
+                <div class="box-search">
+                    <input type="text" id="keyword" name="keyword" x-webkit-speech="" placeholder="搜索商品" autocomplete="off" value="">
+                    <a href="javascript:;" class="del"><img src="/Public/wap/images/del.png"></a>
+                </div>
+		        <input type="hidden" id="g" name="g" value="m">
+		        <input type="hidden" id="m" name="m" value="index">
+		        <input type="hidden" id="a" name="a" value="index">
+                <button id="search-submit" type="submit">
+                    <img src="/Public/wap/images/icon/search.png">
+                </button>
+            </form>
+        </div>
+    </li>
+	<li class="normal {if ($index['index']=='index')} active {/if} "><a href="/"><em class="home"></em>首页</a></li>
+	<li class="normal {if ($index['index']=='yifu')} active {/if}"><a href="/m/yifu?a=index"><em class="fushi"></em>衣服</a></li>
+	<li class="normal {if ($index['index']=='xiezi')} active {/if}"><a href="/m/xiezi?a=index"><em class="xiezi"></em>鞋子</a></li>
+	<li class="normal {if ($index['index']=='baobao')} active {/if}"><a href="/m/baobao?a=index"><em class="baobao"></em>包包</a></li>
+	<li class="normal {if ($index['index']=='peishi')} active {/if}"><a href="/m/peishi?a=index"><em class="peishi"></em>配饰</a></li> 
+   </ul>
+    <p></p> 
+</div>

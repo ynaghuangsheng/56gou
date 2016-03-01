@@ -95,3 +95,4 @@ var carousel_index = function(){
 		clearTimeout(playTimer);
 	});
 };
+

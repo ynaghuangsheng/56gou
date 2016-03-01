@@ -1,0 +1,46 @@
+         <section  class="goods" id="goods">
+         <ul class="goods-list clear" id="goods_block">
+             {foreach $list $v}
+             <li class="clear">
+
+                      <div class="pro_img">
+                           <a href="/m/item?id={$v['id']}" >
+                           <img src="{$v['pic_url']}_200x200.jpg" width="115"  alt="{$v['title']}" >
+                           </a>
+                           {if (checknew($v['starttime']))}
+                              <i class="ico_new"></i>
+                           {/if}
+                           
+                      </div>
+                      <div class="pro_info">
+                             <div class="tit_area">
+                                    <strong class="pad10">{$v['title']}</strong>         
+                             </div>
+                             <div class="attr">
+                                    <span class="price">¥{$v['zk_price']}</span>
+                                    <del>¥{$v['price']}</del>           
+                             </div>
+                             <div class="attr bottom">
+                                     <!-- <span class="line">包邮</span> -->
+                                     <span>{$v['volume']}人已购买</span>           
+                                     <a  class=" fr gobut" isconvert="1" data-itemid="{$v['iid']}"  target="_blank" >立即去购买</a>         
+                             </div>
+                      </div>
+                 
+             </li>
+             {/foreach}
+         
+         
+         </ul>
+        </section>
+        {if (isset($index['ajax_url']))}
+        <div class="goods_list_load" >
+              <span class="ajax_but_url" url="{$index['ajax_url']}" >
+                <span class="goods_next"><img src="/Public/wap/images/goods_next.png"></span>
+                <span class="goods_top" style="display: none;"><img src="/Public/wap/images/goods_top.png"></span>
+                <span class="goods_loading" style="display: none;"><img  style="width:50px;" src="/Public/wap/images/goods_loading.gif"></span>
+              </span>
+        </div>
+        {/if}
+
+ 

@@ -1,0 +1,93 @@
+{include file="head.htpl"}
+
+
+
+
+<div class="pad_lr_10" >
+
+    <div class="J_tablelist table_list" data-acturi="/index.php?g=admin&m=ftxrobots&a=ajax_edit">
+    <table width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th align="center" >选择</th>
+                <th align="left" ><span>图片</span></th>
+                <th align="left" >ID</th>
+                <th align="left" >标题</th>
+                <th align="left" width="50px">原价</th>
+                <th align="left" width="50px">折价</th>
+                <th align="left" width="50px">折扣</th>
+                <th align="left" width="50px">已售</th>
+                <th align="left" width="80px">所在地</th>
+                <th align="left" width="100px">店铺(类型)</th>
+                <th align="center" width="50px">首页</th>
+                <th align="center" width="50px">推荐</th>
+                <th align="center" width="50px">包邮</th>
+                <th align="center" width="100px">操作</th>
+            </tr>
+        </thead>
+    	<tbody>
+             {foreach $list $v}
+             <tr>
+                 <td align="center"><input type="checkbox" name="id[]"  value="{$v['id']}"></td>
+                 <td align="left"><img src="{$v['pic_url']}_60x60.jpg" width="50px" height="50px"></td>
+                 <td align="left">{$v['iid']}</td>
+                 <td align="left">{$v['title']} <span style="display: inline-block;"><a href="{$v['item_url']}">链接</a></span></td>
+                 <td align="left">{$v['price']}</td>
+                 <td align="left">{$v['zk_price']}</td>
+                 <td align="left">{$v['rate']}折</td>
+                 <td align="left">{$v['volume']}</td>
+                 <td align="left">{$v['provcity']}</td>
+                 <td align="left"><a href="{$v['shop_url']}">{$v['taobao_uname']}</a>（{$v['shop_type']}）</td>
+                 <td align="center"><a data_id="{$v['id']}" data_val="{$v['index']}" data_type="index" class="index_but {if ($v['index'])} jing_ss {/if}" ></a></td>
+                 <td align="center"><a data_id="{$v['id']}" data_val="{$v['tuijian']}" data_type="tuijian" class="index_but {if ($v['tuijian'])} jing_ss {/if}" ></a></td>
+                 <td align="center"><a data_id="{$v['id']}" data_val="{$v['baoyou']}" data_type="baoyou" class="index_but {if ($v['baoyou'])} jing_ss {/if}" ></a></td>
+                 <td align="center"><a href="#">修改</a> | <a href="#">删除</a></td>
+             </tr>
+             {/foreach}
+             
+       </tbody>
+       </table>
+       </div>
+             
+</div>
+
+<div class="btn_wrap_fixed">
+        <div id="pages">{$page}</div>
+</div>
+<script type="text/javascript">
+$('.index_but').live("click",function(){
+	var $this = $(this);
+    var $data_id = $this.attr("data_id");
+    var $data_type = $this.attr("data_type");
+    var $data_val = parseInt($this.attr("data_val"));
+
+    $.ajax({
+        type:"get",
+        url:'?c=goods&a=ajaxbut&id='+$data_id+'&type='+$data_type+'&val='+$data_val,
+        cache:false, 
+        dataType:'json', 
+        success:function (data) {
+    	    //alert(data);
+            if(data.msg){
+                if(data.val===1){
+            	$this.attr("data_val",data.val);
+                $this.addClass("jing_ss");
+                }
+                if(data.val===0){
+                	$this.attr("data_val",data.val);
+                	$this.removeClass("jing_ss");
+                }
+                
+            }else{
+            	//alert(data.msg);
+            }
+        },
+        error : function() {    
+            // view("异常！");    
+            alert("异常！");
+       } 
+     });
+
+});
+</script>
+{include file="foot.htpl"}

@@ -1,0 +1,12 @@
+<div class="next-nav">
+            <div class="box">
+                 <ul>
+                    <li><a href="/m/baobao?a=index" {if ($index['tag']=='index')} class="active" {/if}>全部</a></li>
+                    <li><a href="/m/baobao?a=tag&tag={:urlencode("单肩包")}" {if ($index['tag']=='单肩包')} class="active" {/if}>单肩包</a></li>
+                    <li><a href="/m/baobao?a=tag&tag={:urlencode("斜挎包")}" {if ($index['tag']=='斜挎包')} class="active" {/if}>斜挎包</a></li>
+                    <li><a href="/m/baobao?a=tag&tag={:urlencode("双肩包")}" {if ($index['tag']=='双肩包')} class="active" {/if}>双肩包</a></li>
+                    <li><a href="/m/baobao?a=tag&tag={:urlencode("钱包")}" {if ($index['tag']=='钱包')} class="active" {/if}>钱包</a></li>
+                    <li><a href="/m/baobao?a=tag&tag={:urlencode("帆布包")}" {if ($index['tag']=='帆布包')} class="active" {/if}>帆布包</a></li>
+                 </ul>
+           </div>
+</div>

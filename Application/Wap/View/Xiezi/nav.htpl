@@ -1,0 +1,14 @@
+<div class="next-nav">
+            <div class="box">
+                 <ul>
+                    <li><a href="/m/xiezi?a=index" {if ($index['tag']=='index')} class="active" {/if}>全部</a></li>
+                    <li><a href="/m/xiezi?a=tag&tag={:urlencode("单鞋")}" {if ($index['tag']=='单鞋')} class="active" {/if}>单鞋</a></li>
+                    <li><a href="/m/xiezi?a=tag&tag={:urlencode("帆布鞋")}" {if ($index['tag']=='帆布鞋')} class="active" {/if}>帆布鞋</a></li>
+                    <li><a href="/m/xiezi?a=tag&tag={:urlencode("粗跟鞋")}" {if ($index['tag']=='粗跟鞋')} class="active" {/if}>粗跟鞋</a></li>
+                    <li><a href="/m/xiezi?a=tag&tag={:urlencode("短靴")}" {if ($index['tag']=='短靴')} class="active" {/if}>短靴</a></li>
+                    <li><a href="/m/xiezi?a=tag&tag={:urlencode("中筒靴")}" {if ($index['tag']=='中筒靴')} class="active" {/if}>中筒靴</a></li>
+                    <li><a href="/m/xiezi?a=tag&tag={:urlencode("粗跟短靴")}" {if ($index['tag']=='粗跟短靴')} class="active" {/if}>粗跟短靴</a></li>
+                    <li><a href="/m/xiezi?a=tag&tag={:urlencode("踝靴")}" {if ($index['tag']=='踝靴')} class="active" {/if}>踝靴</a></li>
+                 </ul>
+           </div>
+</div>

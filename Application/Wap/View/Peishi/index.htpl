@@ -1,0 +1,20 @@
+{include file="header.htpl"}
+
+<!-- 主体 -->
+<div class="main">
+{include file="left.htpl"}
+	<div class="app">
+		<header id="head" class="head">
+		<div class="fixtop">
+			<span id="classify" class="classify"><a href="javascript:;" class="btn btn-left btn-type"></a></span>
+			<span id="t-index">配饰</span>
+		</div>
+		</header>
+		
+		{include file=":nav.htpl"}
+		{include file="goodslist.htpl"}
+		{include file="footer.htpl"}
+	</div> <!--app end -->
+</div> <!--main end -->
+</body>
+</html>

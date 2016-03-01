@@ -10,37 +10,37 @@ RewriteBase /
 
 #wap
 RewriteRule ^m/?$  /m.php [L]
-RewriteRule ^m/(.+)?$ /m.php?controller=$1 [QSA]
+RewriteRule ^m/(.+)?$ /m.php?c=$1 [QSA]
 
 
 
 #pc
-RewriteRule ^goods /index.php?controller=index&action=direct404 [L]
-RewriteRule ^cat- /index.php?controller=index&action=direct404 [L]
-RewriteRule ^jump /index.php?controller=index&action=direct404 [L]
-RewriteRule ^start /index.php?controller=index&action=direct404 [L]
+RewriteRule ^goods /index.php?c=index&a=direct404 [L]
+RewriteRule ^cat- /index.php?c=index&a=direct404 [L]
+RewriteRule ^jump /index.php?c=index&a=direct404 [L]
+RewriteRule ^start /index.php?c=index&a=direct404 [L]
 
-RewriteRule ^sitemap.txt /index.php?controller=index&action=sitemap [L]
-
-
-RewriteRule ^discover/page/([0-9]+)/?$ /index.php?controller=index&page=$1 [L]
-
-RewriteRule ^(yifu|xiezi|baobao|peishi)/?$ /index.php?controller=$1 [L]
-RewriteRule ^(yifu|xiezi|baobao|peishi)/([0-9]+)/?$ /index.php?controller=$1&page=$2 [L]
-RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/?$ /index.php?controller=$1&action=tag&tag=$2 [L]
-RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?controller=$1&action=tag&tag=$2&page=$3 [L]
+RewriteRule ^sitemap.txt /index.php?c=index&a=sitemap [L]
 
 
-RewriteRule ^(guang)/?$ /index.php?controller=$1 [L]
-RewriteRule ^(guang)/([0-9]+)/?$ /index.php?controller=$1&page=$2 [L]
-RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/?$ /index.php?controller=$1&action=$2 [L]
-RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/([0-9]+)/?$ /index.php?controller=$1&action=$2&page=$3 [L]
-RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/([^/]+)/?$ /index.php?controller=$1&action=$2&tag=$3 [L]
-RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?controller=$1&action=$2&tag=$3&page=$4 [L]
+RewriteRule ^discover/page/([0-9]+)/?$ /index.php?c=index&page=$1 [L]
+
+RewriteRule ^(yifu|xiezi|baobao|peishi)/?$ /index.php?c=$1 [L]
+RewriteRule ^(yifu|xiezi|baobao|peishi)/([0-9]+)/?$ /index.php?c=$1&page=$2 [L]
+RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/?$ /index.php?c=$1&tag=$2 [L]
+RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?c=$1&tag=$2&page=$3 [L]
 
 
-RewriteRule ^(item)/([0-9]+)/?$ /index.php?controller=$1&id=$2 [L]
-RewriteRule ^(looe)/([0-9]+)/?$ /index.php?controller=$1&id=$2 [L]
+RewriteRule ^(guang)/?$ /index.php?c=$1 [L]
+RewriteRule ^(guang)/([0-9]+)/?$ /index.php?c=$1&page=$2 [L]
+RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/?$ /index.php?c=$1&a=$2 [L]
+RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/([0-9]+)/?$ /index.php?c=$1&a=$2&page=$3 [L]
+RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/([^/]+)/?$ /index.php?c=$1&a=$2&tag=$3 [L]
+RewriteRule ^(guang)/(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?c=$1&a=$2&tag=$3&page=$4 [L]
+
+
+RewriteRule ^(item)/([0-9]+)/?$ /index.php?c=$1&id=$2 [L]
+RewriteRule ^(looe)/([0-9]+)/?$ /index.php?c=$1&id=$2 [L]
 
 
 

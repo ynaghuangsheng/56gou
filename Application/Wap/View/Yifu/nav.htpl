@@ -1,0 +1,16 @@
+<div class="next-nav">
+            <div class="box">
+                 <ul>
+                    <li><a href="/m/yifu?a=index" {if ($index['tag']=='index')} class="active" {/if}>全部</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("t恤")}" {if ($index['tag']=='t恤')} class="active" {/if}>T 恤</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("衬衫")}" {if ($index['tag']=='衬衫')} class="active" {/if}>衬衫</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("开衫")}" {if ($index['tag']=='开衫')} class="active" {/if}>开衫</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("文胸")}" {if ($index['tag']=='文胸')} class="active" {/if}>文胸</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("内裤")}" {if ($index['tag']=='内裤')} class="active" {/if}>内裤</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("连衣裙")}" {if ($index['tag']=='连衣裙')} class="active" {/if}>连衣裙</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("牛仔裤")}" {if ($index['tag']=='牛仔裤')} class="active" {/if}>牛仔裤</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("小脚裤")}" {if ($index['tag']=='小脚裤')} class="active" {/if}>小脚裤</a></li>
+                    <li><a href="/m/yifu?a=tag&tag={:urlencode("打底裤")}" {if ($index['tag']=='打底裤')} class="active" {/if}>打底裤</a></li>
+                 </ul>
+           </div>
+</div>

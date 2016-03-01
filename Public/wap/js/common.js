@@ -88,6 +88,11 @@ $(function () {
                 $('.adType').children().eq(i).addClass('current').siblings().removeClass('current');
             }
         });
+		$(window).resize(function(){
+			var getWidth = $('.banner').width();
+			var getHeight = $('.banner').height();
+			$(".banner li,.banner li img").css({'width':getWidth,'height':getHeight})
+		});
     };
     if($(".area").size()>0){
     	carousel_index();

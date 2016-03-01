@@ -1,0 +1,62 @@
+{include file="head.htpl"}
+
+<div class="subnav">
+    <h1 class="title_2 line_x">采集器修改</h1>
+</div>
+<div class="pad_lr_10" >
+    <form id="info_form" action="?c=taobao&a=update" method="post" >
+
+    <input name="id" type="hidden"  value="{$data['id']}">
+    <input name="url" type="hidden"  value="{$data['url']}">
+    <table width="100%" cellspacing="0" class="table_form">
+        <tbody>
+             <tr>
+                 <th width="150">采集器名称：</th>
+                 <td>
+                     <input name="name" type="text" class="input-text" value="{$data['name']}">
+                     <input name="name_" type="hidden"  value="{$data['name']}">
+                     <span class="gray ml10"><font color="red">*</font> 请填上名称</span>
+                 </td>
+                 
+             </tr>
+             <tr>
+                 <th width="150">关键字：</th>
+                 <td>
+                     <input name="key" type="text" class="input-text" value="{$data['key']}">
+                     <input name="key_" type="hidden"  value="{$data['key']}">
+                     <span class="gray ml10"><font color="red">*</font> 请填上关键字</span>
+                 </td>
+                 
+             </tr>
+             <tr>
+                 <th>淘宝类别：</th>
+                 <td>
+                     <input name="cat" type="text" class="input-text" value="{$data['cat']}">
+                     <input name="cat_" type="hidden"  value="{$data['cat']}">
+                     <span class="gray ml10"><font color="red">*</font> 请填上类别</span>
+                 </td>
+            </tr>
+            <tr>
+                 <th>导航类别：</th>
+                 <td>
+                    <select name='cid' class="J_cate_select mr10">
+                             {foreach $list $vals}
+                             <option value="{$vals['id']}" {if ($vals['id']==$data['cid'])} selected {/if}>{$vals['name']}</option>
+			                 {/foreach}
+                    </select>
+                 </td>
+            </tr>
+			
+            
+             <tr>
+                <th></th>
+                <td><input type="submit" name="search" class="smt  mr10" value="确定" /></td>
+            </tr>
+             
+        </tbody>
+   </table>
+
+   </form>
+</div>
+
+{include file="foot.htpl"}

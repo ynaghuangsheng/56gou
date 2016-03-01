@@ -1,0 +1,53 @@
+{if ($menuid==0)}
+<h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>友情链接</h3>
+<ul>
+
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=link" data-id="1" hidefocus="true">友链管理</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=link&a=add" data-id="2" hidefocus="true">新建友链</a></li>
+	
+</ul>
+{/if}
+
+
+{if ($menuid==1)}
+<h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>商品采集</h3>
+<ul>
+	
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=taobao" data-id="11" hidefocus="true">采集器管理</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=taobao&a=add" data-id="12" hidefocus="true">新建采集器</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=taobao&a=ruku" data-id="13" hidefocus="true">采集入库</a></li>
+</ul>
+<h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>采集规则</h3>
+<ul>	
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=rule" data-id="17" hidefocus="true">规则管理</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=rule&a=add" data-id="18" hidefocus="true">新建规则</a></li>
+</ul>
+<h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>标签库</h3>
+<ul>
+   
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=tag" data-id="14" hidefocus="true">标签管理</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=tag&a=add" data-id="15" hidefocus="true">增加标签</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=tag&a=put" data-id="16" hidefocus="true">更新</a></li>
+	
+</ul>
+{/if}
+
+
+{if ($menuid==2)}
+<h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>商品类别</h3>
+<ul>
+
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=type" data-id="21" hidefocus="true">类别管理</a></li>
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=type&a=add" data-id="22" hidefocus="true">新建类别</a></li>
+	
+</ul>
+{/if}
+
+{if ($menuid==3)}
+<h3 class="f14"><span class="J_switchs cu on" title="展开或关闭"></span>商品管理</h3>
+<ul>
+
+   <li class="sub_menu"><a href="javascript:;" data-uri="?c=goods" data-id="31" hidefocus="true">商品管理</a></li>
+	
+</ul>
+{/if}

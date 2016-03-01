@@ -1,0 +1,14 @@
+<div class="next-nav">
+            <div class="box">
+                 <ul>
+                    <li><a href="/m/peishi?a=index" {if ($index['tag']=='index')} class="active" {/if}>全部</a></li>
+                    <li><a href="/m/peishi?a=tag&tag={:urlencode("项链")}" {if ($index['tag']=='项链')} class="active" {/if}>项链</a></li>
+                    <li><a href="/m/peishi?a=tag&tag={:urlencode("手链")}" {if ($index['tag']=='手链')} class="active" {/if}>手链</a></li>
+                    <li><a href="/m/peishi?a=tag&tag={:urlencode("戒指")}" {if ($index['tag']=='戒指')} class="active" {/if}>戒指</a></li>
+                    <li><a href="/m/peishi?a=tag&tag={:urlencode("耳钉")}" {if ($index['tag']=='耳钉')} class="active" {/if}>耳钉</a></li>
+                    <li><a href="/m/peishi?a=tag&tag={:urlencode("手表")}" {if ($index['tag']=='手表')} class="active" {/if}>手表</a></li>
+                    <li><a href="/m/peishi?a=tag&tag={:urlencode("发箍")}" {if ($index['tag']=='发箍')} class="active" {/if}>发箍</a></li>
+                    <li><a href="/m/peishi?a=tag&tag={:urlencode("发卡")}" {if ($index['tag']=='发卡')} class="active" {/if}>发卡</a></li>
+                 </ul>
+           </div>
+</div>

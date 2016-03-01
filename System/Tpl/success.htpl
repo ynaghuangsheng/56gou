@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+{if ($time)}
+<meta http-equiv="refresh" content="{$time}; url={$url}" />
+{/if}
+<title>提示信息</title>
+</head>
+<body>
+
+<div style="width:35%;height:30%;margin:0 auto;font-size:25px;color:#000;font-weight:bold;">
+<dl style="padding:0px;margin:0px;width:100%;height:100%;border:1px solid #ccc;">
+    <dt style="padding:0px;margin:0px;border-bottom:1px solid #ccc;line-height:50px;font-size:20px;text-align:center;background:#efefef;">
+             提示信息
+    </dt>
+    <dd style="padding:0px;width:100%;line-height:25px;font-size:17px;text-align:center;text-indent:0px;margin:0px;padding:30px 0">
+    {if (isset($link))}
+     <font color="red" >{$message}</font><br><br>
+     {if ($time)}
+        <font color="red" id="time" size="20">{$time}</font> 秒后自动返回<br><br>
+        <script type="text/javascript">
+          setTimeout("delayURL()",1000);
+        </script>
+     {/if}
+     <a href="{$url}">返回</a>  <a href="{$link['url']}">{$link['name']}</a>
+    {else}
+       {$message}
+    {/if}
+    </dd>
+</dl>
+</div>
+<script type="text/javascript">
+function delayURL(){
+	
+	var delay=document.getElementById("time").innerHTML;
+	//alert(delay);
+	if(delay>0){
+		delay--;
+		document.getElementById("time").innerHTML=delay;
+		var t=setTimeout("delayURL()",1000);
+	}else{
+		clearTimeout(t);
+	}
+}
+
+</script>
+</body>
+</html>
