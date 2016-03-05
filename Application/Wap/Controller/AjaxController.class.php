@@ -3,7 +3,7 @@ class AjaxController extends CommonController{
 	//网站首页
 	public function index(){
 		//查询商品
-		$_list=M('goods')->getSelect($this->_page);
+		$_list=M('goods')->getSelect($this->_page,'`cid`!=7');
 		$_listCount= M('goods')->_count; //商品总记录数
 		if($_list){
 			$this->ajaxReturn(array('msg'=>true ,'data'=>$_list ,'total_rows'=>$_listCount ));
@@ -15,7 +15,7 @@ class AjaxController extends CommonController{
 	//首页推荐
 	public function indextuijian(){
 		//设置条件
-		$_where='`cid`<3';
+		$_where='`cid`<3 and `cid`!=7';
 		$_order='`index` desc,id desc ';
 		//查询商品
 		$_list=M('goods')->getSelect($this->_page,$_where,$_order);
@@ -29,7 +29,7 @@ class AjaxController extends CommonController{
 	//首页特价
 	public function indexju(){
 		//设置条件
-		$_where=' (`zk_price`<10 and `zk_price`>9) or (`zk_price`<20 and `zk_price`>19) or (`zk_price`<30 and `zk_price`>29)';
+		$_where=' ((`zk_price`<10 and `zk_price`>9) or (`zk_price`<20 and `zk_price`>19) or (`zk_price`<30 and `zk_price`>29)) and `cid`!=7';
 		//查询商品
 		$_list=M('goods')->getSelect($this->_page,$_where);
 		$_listCount= M('goods')->_count; //商品总记录数
@@ -44,7 +44,7 @@ class AjaxController extends CommonController{
 		//设置条件
 		$_order='`tuijian` desc,id desc ';
 		//查询商品
-		$_list=M('goods')->getSelect($this->_page,null,$_order);
+		$_list=M('goods')->getSelect($this->_page,'`cid`!=7',$_order);
 		$_listCount= M('goods')->_count; //商品总记录数
 	
 	    if($_list){

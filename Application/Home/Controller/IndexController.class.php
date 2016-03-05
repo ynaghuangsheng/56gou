@@ -7,7 +7,7 @@ class IndexController extends CommonController{
 		
 		$_goods=M('goods');
 		//最新
-		$_list=$_goods->getSelect($this->_page);
+		$_list=$_goods->getSelect($this->_page,'`cid`!=7');
 		//配置页码
 		$_page=new Page(array('total_rows'=>$_goods->_count,'now_page'=>$this->_page,'url'=>"/discover/page/{page}/"));
 		$this->assign('list',$_list);

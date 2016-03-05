@@ -64,6 +64,11 @@ class ItemController extends CommonController{
 				$_array['name']='配饰';
 				$_array['tag']='peishi';
 				break;
+			case 7:
+			    $_array['url']='/adult/';
+			    $_array['name']='成人用品';
+				$_array['tag']='adult';
+				break;
 			default:
 				$_array['url']='/index/';
 				$_array['name']='首页';

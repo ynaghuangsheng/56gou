@@ -12,7 +12,7 @@ class Page{
     protected $end_page;
 	//构造
     public function __construct($data = array()){
-    	   $this->total_rows = $data['total_rows'];//总行数
+    	   $this->total_rows = $data['total_rows']?$data['total_rows']:1;//总行数
            $this->list_rows = isset($data['list_rows'])?$data['list_rows']:40;//页显示行数
            $this->total_pages =ceil($this->total_rows / $this->list_rows);//总页数
            $this->now_page =  (isset($data['now_page']) && intval($data['now_page'])>0 )?($this->total_pages<intval($data['now_page']))?$this->total_pages:intval($data['now_page']):1; //当前页码

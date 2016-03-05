@@ -23,6 +23,7 @@ RewriteRule ^start /index.php?c=index&a=direct404 [L]
 RewriteRule ^sitemap.txt /index.php?c=index&a=sitemap [L]
 
 
+
 RewriteRule ^discover/page/([0-9]+)/?$ /index.php?c=index&page=$1 [L]
 
 RewriteRule ^(yifu|xiezi|baobao|peishi)/?$ /index.php?c=$1 [L]
@@ -30,6 +31,15 @@ RewriteRule ^(yifu|xiezi|baobao|peishi)/([0-9]+)/?$ /index.php?c=$1&page=$2 [L]
 RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/?$ /index.php?c=$1&tag=$2 [L]
 RewriteRule ^(yifu|xiezi|baobao|peishi)/([^/]+)/([0-9]+)/?$ /index.php?c=$1&tag=$2&page=$3 [L]
 
+RewriteRule ^(adult)/?$ /index.php?c=$1 [L]
+RewriteRule ^(adult)/([0-9]+)/?$ /index.php?c=$1&page=$2 [L]
+RewriteRule ^(adult)/(tag)/?$ /index.php?c=$1&a=$2 [L]
+RewriteRule ^(adult)/(tag)/([0-9]+)/?$ /index.php?c=$1&a=$2&page=$3 [L]
+RewriteRule ^(adult)/(tag)/([^/]+)/?$ /index.php?c=$1&a=$2&tag=$3 [L]
+RewriteRule ^(adult)/(tag)/([^/]+)/([0-9]+)/?$ /index.php?c=$1&a=$2&tag=$3&page=$4 [L]
+
+RewriteRule ^(adult)/(getjson)/([0-9]+)/?$ /index.php?c=$1&a=$2&count=$3 [L]
+RewriteRule ^(adult)/(getjson)/?$ /index.php?c=$1&a=$2 [L]
 
 RewriteRule ^(guang)/?$ /index.php?c=$1 [L]
 RewriteRule ^(guang)/([0-9]+)/?$ /index.php?c=$1&page=$2 [L]
