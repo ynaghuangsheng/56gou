@@ -46,6 +46,7 @@ class TypeController extends CommonController {
 	}
 	//处理新增数据
 	public function insert(){
+	    $status = empty($_POST['status']) ? 0 : 1 ;
 		$_array=array(
 				'name'=>$_POST['name'],
 				'tag'=>$_POST['tag'],
@@ -53,7 +54,8 @@ class TypeController extends CommonController {
 				'seo_title'=>$_POST['seo_title'],
 				'seo_key'=>$_POST['seo_key'],
 				'seo_des'=>$_POST['seo_des'],
-				'add_time'=>time()
+				'add_time'=>time(),
+		        'status' =>$status,
 		);
 		//实例数据对像
 		$_table=M('type');
@@ -95,6 +97,7 @@ class TypeController extends CommonController {
 	public function update(){
 		$_id=$_POST['id'];
 		$_url=$_POST['url'];
+		$status = empty($_POST['status']) ? 0 : 1 ;
 		$_array=array(
 				'name'=>$_POST['name'],
 				'tag'=>$_POST['tag'],
@@ -102,6 +105,7 @@ class TypeController extends CommonController {
 				'seo_title'=>$_POST['seo_title'],
 				'seo_key'=>$_POST['seo_key'],
 				'seo_des'=>$_POST['seo_des'],
+		        'status' =>$status,
 		);
 		//实例数据对像
 		$_table=M('type');
