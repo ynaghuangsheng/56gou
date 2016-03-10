@@ -10,7 +10,7 @@ class ItemController extends CommonController{
 		
 		//模板赋值
 		//模板赋值
-		$this->assign('index',array('index'=>'','tag'=>'','ajax_url'=>"/m/ajax?a=goods&cid={$_item['cid']}"));//设置导航游标 加载商品地址
+		$this->assign('index',array('index'=>'','tag'=>'','ajax_page'=>1,'ajax_url'=>"/m/ajax?a=goods&cid={$_item['cid']}"));//设置导航游标 加载商品地址
 		$this->assign('item',$_item);//商品信息
 		$this->assign('pic',$_pic);//图片组
 		
