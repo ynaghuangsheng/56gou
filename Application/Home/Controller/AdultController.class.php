@@ -2,6 +2,10 @@
 class AdultController extends CommonController{
 	//成人用品主页
 	public function index(){
+		if(is_mobile()){
+			header('Location:'.C('WAP_MOBILE')."/m/adult");
+			exit();
+		}
 		//获取成人用品
 		$_list=M('goods')->getSelect($this->_page,'`cid`=7');
 		//配置页码
@@ -38,6 +42,9 @@ class AdultController extends CommonController{
 		$this->assign('index','adult');//导航游标
 		$this->display('index.htpl');
 	}
+
+    	
+
 	//外站调用
 	public function getjson(){
 		//必须为数字
@@ -65,4 +72,20 @@ class AdultController extends CommonController{
 		}
 	
 	}
+	
+	//外站调用
+	public function gethtml(){
+		
+
+		$_list=M('goods')->getXuSelect(1,null,'rand()');//随机获取12条数据
+		//print_r($_list);
+		$_data=$_list[0];
+		$this->assign('data',$_data);
+		$this->display();
+			
+		
+	
+	}
+	
+	
 }
