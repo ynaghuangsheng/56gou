@@ -57,7 +57,10 @@ class AjaxController extends CommonController{
 	public function goods(){
 		//设置条件
 		$_where="`cid`={$_GET['cid']}";
-		isset($_GET['tag'])&&$_where.=" and `tag`={$_GET['tag']}";
+		if(isset($_GET['tag'])){
+			$_tag=urldecode($_GET['tag']);
+			$_where.=" and `title` like '%$_tag%'";
+		}
 		//查询商品
 		$_list=M('goods')->getSelect($this->_page,$_where);
 		$_listCount= M('goods')->_count; //商品总记录数
