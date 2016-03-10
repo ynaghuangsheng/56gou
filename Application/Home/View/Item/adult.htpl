@@ -1,0 +1,99 @@
+{include file="header.htpl"}
+
+<script type="text/javascript">
+var jiathis_config = {
+    shareImg:{
+        "showType":"MARK",
+        "bgColor":"#ff318c",
+        "txtColor":"#fff",
+        "text":"分享给朋友",
+        "services":"",
+        "position":"",
+        "imgwidth":"",
+        "imgheight":"",
+        "divname":""
+    }
+} 
+</script>
+<script type='text/javascript' src='http://v3.jiathis.com/code/jia.js' charset='utf-8'></script> 
+
+<div class="itemBox">
+<div class="item">
+     <div class="item_title">当前位置：<a href="/"> 我乐购</a> &gt; <a href="{$do['url']}">{$do['name']}</a> &gt; <a href="#">{$item['title']}</a></span></div>
+     <div class="item_goods">
+          <div class="tupian">
+               <div id="tupian400">
+               <img class="JIATHIS_IMG_OK" src="/Public/tbpic/{$item['iid']}_400x400.jpg">
+               </div>
+               <ul></ul>
+          </div>
+          <div class="itemtxt">
+               <div class="txt">
+                 <h3 class="title">{$item['title']}</h3>
+                 {P:list($zk_price1,$zk_price2)= explode('.',$item['zk_price']);}
+                 <div class="zk"><span class="current"><em class="unit">￥</em><em class="big">{$zk_price1}</em><em class="tiny">.{$zk_price2}</em></span></div>
+                 <div class="other">
+                                                                        原价：<span class="del">￥{$item['price']}元</span><span>（<em class="rate">{$item['rate']}折</em>）</span>
+                                &nbsp&nbsp<span>月销量：{$item['volume']}件</span>
+                                &nbsp&nbsp<span>所在地：{$item['provcity']}</span>
+                 </div>
+                 <div class="but">
+                 <a class="gotoItem" isconvert="1" data-itemid="{$item['iid']}"  target="_blank">去淘宝购买&gt;&gt;</a><br/>
+                 </div>
+                 
+               </div>
+               <div class="shop">
+                 <h5>所属店铺</h5>
+                 <div class="derc">
+                      <span class="logo"><img src="/Public/tbshoppic/logo.jpg"></span>
+                      <span class="name">{$item['taobao_uname']}</span>
+                      <span><a class="gotoShop" isconvert="1" data-sellerid="{$item['taobao_uid']}"  target="_blank">去店铺看看&gt;&gt;</a></span>
+                      <div class="clear"></div>
+                 </div>
+               </div>
+          
+          </div>
+          
+          <div class="clear"></div>
+        
+          
+     </div>
+</div>
+</div>
+<script type="text/javascript">
+<!--
+$picurl={$small};
+if($picurl.length==0){
+	$('.tupian ul').hide();
+}
+$.each( $picurl, function(i, n){
+	 $('.tupian ul').append("<li srctext=\""+n+"_400x400.jpg\"><img src=\""+n+"_80x80.jpg\"></li>");
+});
+$('.tupian li').live("click",function(){
+	   $pic400=$(this).attr("srctext");
+	   $('#tupian400 img').attr("src",$pic400);
+});
+
+
+//-->
+</script>
+
+<div class="bodyBox" style=" width:1100px; margin:20px auto 0px auto; text-align: left;"><script type="text/javascript">
+        document.write('<a style="display:none!important" id="tanx-a-mm_14743860_9800659_41972928"></a>');
+        tanx_s = document.createElement("script");
+        tanx_s.type = "text/javascript";
+        tanx_s.charset = "gbk";
+        tanx_s.id = "tanx-s-mm_14743860_9800659_41972928";
+        tanx_s.async = true;
+        tanx_s.src = "http://p.tanx.com/ex?i=mm_14743860_9800659_41972928";
+        tanx_h = document.getElementsByTagName("head")[0];
+        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script></div>
+
+<div class="bodyBox">
+        <div class="itemlist"><h4>更多同类折扣商品</h4></div>
+        {include file=":goodslist.htpl"}
+
+</div>
+
+{include file="footer.htpl"}

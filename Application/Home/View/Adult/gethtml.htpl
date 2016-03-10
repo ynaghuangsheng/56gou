@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="/Public/home/js/jquery-1.7.min.js" type="text/javascript"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<script>  
+function test(){
+	
+	window.location.href="/m/item?id={$data['id']}"; 
+ 
+}
+function showMsg(){
+	
+	if($("#d_text").is(":hidden")){
+	       $("#d_text").show();    //如果元素为隐藏,则将它显现
+	       alert("显示了"); 
+	}else{
+	      $("#d_text").hide();     //如果元素为显现,则将其隐藏
+	      alert("隐藏了"); 
+	}
+   
+}
+function solodyBnt(){
+	
+	window.solody.say("标题改娈了");
+}
+
+</script>
+<div><a href="/m/item?id={$data['id']}"><img  src="{$data['pic_url']}" style="width:100%;"></a></div>
+<div style="color:red;line-height:35px;padding-bottom:20px;text-align:center;">
+            点击购买    <button id="target"  onclick="test()">购买</button> <br>
+            
+            <button id="target" onclick="solodyBnt()">改变标题</button>
+            
+
+ </div>
+ 
+ <div id="d_text" style="text-align:center;displaynone;">我出现了</div>
+
+</body>
+</html>

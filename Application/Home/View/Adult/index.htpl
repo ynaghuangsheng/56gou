@@ -51,7 +51,7 @@
 -->
 
 <div class="bodyBox">
-        {include file="goodslist.htpl"}
+        {include file=":goodslist.htpl"}
 </div>
 <div class="pageBox"><span class="pageBox_nav">{$page}</span></div>
 {include file="footer.htpl"}

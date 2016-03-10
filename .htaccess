@@ -37,6 +37,7 @@ RewriteRule ^(adult)/(tag)/?$ /index.php?c=$1&a=$2 [L]
 RewriteRule ^(adult)/(tag)/([0-9]+)/?$ /index.php?c=$1&a=$2&page=$3 [L]
 RewriteRule ^(adult)/(tag)/([^/]+)/?$ /index.php?c=$1&a=$2&tag=$3 [L]
 RewriteRule ^(adult)/(tag)/([^/]+)/([0-9]+)/?$ /index.php?c=$1&a=$2&tag=$3&page=$4 [L]
+RewriteRule ^adult/item/([0-9]+)/?$ /index.php?c=item&a=adult&id=$1 [L]
 
 RewriteRule ^(adult)/(getjson)/([0-9]+)/?$ /index.php?c=$1&a=$2&count=$3 [L]
 RewriteRule ^(adult)/(getjson)/?$ /index.php?c=$1&a=$2 [L]
