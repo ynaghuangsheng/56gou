@@ -1,89 +1,39 @@
 <?php
 //判断是否移动端访问
 function is_mobile(){ 
-    $user_agent = $_SERVER['HTTP_USER_AGENT'];  
-  
-    $mobile_agents = Array("240x320","acer","acoon","acs-","abacho","ahong","airness","alcatel","amoi","android","anywhereyougo.com","applewebkit/525","applewebkit/532","asus","audio","au-mic","avantogo","becker","benq","bilbo","bird","blackberry","blazer","bleu","cdm-","compal","coolpad","danger","dbtel","dopod","elaine","eric","etouch","fly ","fly_","fly-","go.web","goodaccess","gradiente","grundig","haier","hedy","hitachi","htc","huawei","hutchison","inno","ipad","ipaq","ipod","jbrowser","kddi","kgt","kwc","lenovo","lg ","lg2","lg3","lg4","lg5","lg7","lg8","lg9","lg-","lge-","lge9","longcos","maemo","mercator","meridian","micromax","midp","mini","mitsu","mmm","mmp","mobi","mot-","moto","nec-","netfront","newgen","nexian","nf-browser","nintendo","nitro","nokia","nook","novarra","obigo","palm","panasonic","pantech","philips","phone","pg-","playstation","pocket","pt-","qc-","qtek","rover","sagem","sama","samu","sanyo","samsung","sch-","scooter","sec-","sendo","sgh-","sharp","siemens","sie-","softbank","sony","spice","sprint","spv","symbian","tablet","talkabout","tcl-","teleca","telit","tianyu","tim-","toshiba","tsm","up.browser","utec","utstar","verykool","virgin","vk-","voda","voxtel","vx","wap","wellco","wig browser","wii","windows ce","wireless","xda","xde","zte");  
-    $is_mobile = false;  
-    foreach ($mobile_agents as $device) {//这里把值遍历一遍，用于查找是否有上述字符串出现过  
-       if (stristr($user_agent, $device)) { //stristr 查找访客端信息是否在上述数组中，不存在即为PC端。  
-            $is_mobile = true;  
-            break;  
-        }  
-    }  
-    return $is_mobile;  
+    $_SERVER['ALL_HTTP'] = isset($_SERVER['ALL_HTTP']) ? $_SERVER['ALL_HTTP'] : '';  
+    $mobile_browser = '0';  
+    if(preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|iphone|ipad|ipod|android|xoom)/i', strtolower($_SERVER['HTTP_USER_AGENT'])))  
+       $mobile_browser++;  
+    if((isset($_SERVER['HTTP_ACCEPT'])) and (strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') !== false))  
+       $mobile_browser++;  
+    if(isset($_SERVER['HTTP_X_WAP_PROFILE']))  
+       $mobile_browser++;  
+    if(isset($_SERVER['HTTP_PROFILE']))  
+       $mobile_browser++;  
+       $mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'],0,4));  
+       $mobile_agents = array(  
+		    'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',  
+		    'blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',  
+		    'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-',  
+		    'maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',  
+		    'newt','noki','oper','palm','pana','pant','phil','play','port','prox',  
+		    'qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',  
+		    'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-',  
+		    'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',  
+		    'wapr','webc','winw','winw','xda','xda-'
+	   );  
+    if(in_array($mobile_ua, $mobile_agents))$mobile_browser++;  
+    if(strpos(strtolower($_SERVER['ALL_HTTP']), 'operamini') !== false)$mobile_browser++;  
+    if(strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'windows') !== false)$mobile_browser=0;  
+    if(strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'windows phone') !== false)$mobile_browser++;  
+    if($mobile_browser>0){  
+       return true;  
+    }else{
+       return false;
+    }
+
 }
 
-/**
- * 是否移动端访问访问
- *
- * @return bool
- */
-function is_mobile2()
-{ 
-    // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
-    if (isset ($_SERVER['HTTP_X_WAP_PROFILE']))
-    {
-        return true;
-    } 
-    // 如果via信息含有wap则一定是移动设备,部分服务商会屏蔽该信息
-    if (isset ($_SERVER['HTTP_VIA']))
-    { 
-        // 找不到为flase,否则为true
-        return stristr($_SERVER['HTTP_VIA'], "wap") ? true : false;
-    } 
-    // 脑残法，判断手机发送的客户端标志,兼容性有待提高
-    if (isset ($_SERVER['HTTP_USER_AGENT']))
-    {
-        $clientkeywords = array ('nokia',
-            'sony',
-            'ericsson',
-            'mot',
-            'samsung',
-            'htc',
-            'sgh',
-            'lg',
-            'sharp',
-            'sie-',
-            'philips',
-            'panasonic',
-            'alcatel',
-            'lenovo',
-            'iphone',
-            'ipod',
-            'blackberry',
-            'meizu',
-            'android',
-            'netfront',
-            'symbian',
-            'ucweb',
-            'windowsce',
-            'palm',
-            'operamini',
-            'operamobi',
-            'openwave',
-            'nexusone',
-            'cldc',
-            'midp',
-            'wap',
-            'mobile'
-            ); 
-        // 从HTTP_USER_AGENT中查找手机浏览器的关键字
-        if (preg_match("/(" . implode('|', $clientkeywords) . ")/i", strtolower($_SERVER['HTTP_USER_AGENT'])))
-        {
-            return true;
-        } 
-    } 
-    // 协议法，因为有可能不准确，放到最后判断
-    if (isset ($_SERVER['HTTP_ACCEPT']))
-    { 
-        // 如果只支持wml并且不支持html那一定是移动设备
-        // 如果支持wml和html但是wml在html之前则是移动设备
-        if ((strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') !== false) && (strpos($_SERVER['HTTP_ACCEPT'], 'text/html') === false || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html'))))
-        {
-            return true;
-        } 
-    } 
-    return false;
-}
+
 
