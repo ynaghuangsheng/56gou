@@ -129,13 +129,19 @@ $(function () {
 		 var ajax_load=true;
 	     var ajax_but=$('.ajax_but_url');
 	     var url=ajax_but.attr('url');
+	     var page=ajax_but.attr('page');
 	     var goods_top=$('.goods_top');
 	     var goods_next=$('.goods_next');
 	     var goods_loading=$('.goods_loading');
 	     var mydate = new Date();
 	     mydate=mydate.getTime();
          var winH = $(window).height(); //页面可视区域高度 
-         var i = 2; //设置开始页码 
+         if(page=0){
+        	 var i = 2; //设置开始页码 
+         }else{
+        	 var i=page;
+         }
+         
          $(window).scroll(function () { 
               var pageH = $(document).height(); 
               var scrollT = $(window).scrollTop(); //滚动条top 
