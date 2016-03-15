@@ -24,9 +24,9 @@ class ItemController extends CommonController{
 		$this->assign('do',$_index);
 		$this->assign('item',$_item);
 		$this->assign('small',$this->small($_item['small_images'],$_item['pic_url']));//
-		$_head['title']="{$_item['title']}-我乐购";
-		$_head['key']="{$_item['title']},{$_seoTag},56购物网,淘宝,天猫,特卖,折扣,打折";
-		$_head['des']="【{$_item['title']}】最新特卖打折信息，【{$_item['title']}】最新折扣优惠信息-小编每天为你推荐最新的淘宝、天猫等各大购物商城最优质的折扣商品,享折扣就上我乐购";
+		$_head['title']="{$_item['title']} - 女也淘宝精选";
+		$_head['key']="{$_item['title']},{$_seoTag},女也时尚,淘宝,天猫,特卖,折扣,打折";
+		$_head['des']="【{$_item['title']}】最新特卖打折信息，【{$_item['title']}】最新折扣优惠信息-小编每天为你推荐最新的淘宝、天猫等各大购物商城最优质的折扣商品,享折扣就上女也";
 		$this->assign('head',$_head);
 		
 		$this->display();

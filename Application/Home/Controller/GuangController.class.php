@@ -10,9 +10,9 @@ class GuangController extends CommonController{
 		$this->assign('list',$_list);
 		$this->assign('page',$_page->show());
 		
-		$_head['title']="逛折扣-我乐购";
+		$_head['title']="逛折扣  - 女也淘宝精选";
 		$_head['key']="女装衣服,鞋子,包包,配饰,折扣,优惠";
-		$_head['des']="我乐购逛折扣频道汇聚淘宝、天猫等各大购物商城最优质的折扣商品,提供女装衣服,鞋子,包包,配饰最新价格折扣优惠信息.-我乐购";
+		$_head['des']="女也逛折扣频道汇聚淘宝、天猫等各大购物商城最优质的折扣商品,提供女装衣服,鞋子,包包,配饰最新价格折扣优惠信息. - 女也淘宝精选";
 		 
 		
 		$this->assign('head',$_head);

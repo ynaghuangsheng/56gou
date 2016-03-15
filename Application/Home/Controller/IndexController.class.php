@@ -30,8 +30,8 @@ class IndexController extends CommonController{
 		$this->assign('link',$_link);
 		
 		//设置头部
-		$_head['title']='女也,她,折扣购物,打折购物,专业的女性时尚品牌商品导购网';
-		$_head['key']='女也,她,56购物网 ,特卖,折扣,打折';
+		$_head['title']='女也,她,折扣购物,打折购物,专业的女性时尚品牌商品杂志';
+		$_head['key']='女也,她,女也时尚网,时尚，淘宝 ,特卖,折扣,打折';
 		$_head['des']='女也,汇聚淘宝、天猫等各大购物商城最优质的折扣商品,每天为你推荐最新的名牌女装、品牌女包、高档女装、潮流服饰、美容护肤品等折扣信息-享折扣就上女也';
 		$this->assign('head',$_head);//模板赋值
 		$this->assign('index','index');//设置导航游标
