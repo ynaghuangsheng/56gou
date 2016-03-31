@@ -1,6 +1,11 @@
 
 
 RewriteEngine On
+
+
+RewriteCond %{HTTP_HOST} ^56gou.com [NC]
+RewriteRule ^(.*)$ http://www.56gou.com/$1 [L,R=301]
+
 RewriteCond %{HTTP_HOST} m.56gou.com
 #wap->index
 RewriteCond %{REQUEST_URI} ^.?$
