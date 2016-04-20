@@ -58,7 +58,7 @@ class DbMysqlnd extends Db{
 		
 		if($this->_queryID == false){
 			$this->_numRows=0;//重置
-			$this->_error= mysql_error();
+			$this->_error= mysqli_error();
 			//如果结果集为假，反回false;
 			return false;
 		}else{
